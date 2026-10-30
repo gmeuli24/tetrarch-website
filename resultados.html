@@ -130,7 +130,8 @@ function renderAccount(){
   document.getElementById('acc-trade-count').textContent=tradesCache.filter(t=>t.action!=='Deposit'&&t.action!=='Credit').length;
   document.getElementById('acc-server').textContent=s.server||'—';
   const synced=accountCache.syncedAt?new Date(accountCache.syncedAt).toLocaleString(currentLang()==='es'?'es-AR':'en-US'):'—';
-  const sourceUpdate=s.lastUpdateDate||'—';\n  document.getElementById('account-updated').textContent=(currentLang()==='es'?'Última consulta del sitio: ':'Website sync: ')+synced+' · '+(currentLang()==='es'?'Última actualización de Myfxbook: ':'Myfxbook last update: ')+sourceUpdate;
+  const sourceUpdate=s.lastUpdateDate||'—';
+  document.getElementById('account-updated').textContent=(currentLang()==='es'?'Última consulta del sitio: ':'Website sync: ')+synced+' · '+(currentLang()==='es'?'Última actualización de Myfxbook: ':'Myfxbook last update: ')+sourceUpdate;
   const rows=tradesCache.filter(t=>t.action!=='Deposit'&&t.action!=='Credit').slice().reverse().slice(0,15);
   const tbody=document.getElementById('account-trades');tbody.replaceChildren();
   if(!rows.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=6;td.className='muted';td.textContent=currentLang()==='es'?'No hay operaciones cerradas disponibles.':'No closed trades available.';tr.appendChild(td);tbody.appendChild(tr);return}
