@@ -3,9 +3,10 @@ name: Sync Tetrarch Myfxbook data
 on:
   workflow_dispatch:
   schedule:
-    # Four checks per day to record Myfxbook lastUpdateDate.
-    # 00:15, 06:15, 12:15, 18:15 UTC = 21:15, 03:15, 09:15, 15:15 Argentina.
-    - cron: "15 0,6,12,18 * * *"
+    # Check every 4 hours; Auto Update availability is controlled by Myfxbook.
+    # 00:15, 04:15, 08:15, 12:15, 16:15, 20:15 UTC.
+    # Argentina (GMT-3): 21:15, 01:15, 05:15, 09:15, 13:15, 17:15.
+    - cron: "15 */4 * * *"
 
 permissions:
   contents: write
