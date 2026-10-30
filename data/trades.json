@@ -1,6 +1,137 @@
 {
-  "schemaVersion": 1,
   "account": "12278068",
-  "syncedAt": null,
-  "trades": []
+  "schemaVersion": 1,
+  "syncedAt": "2026-10-30T20:54:31.483468+00:00",
+  "trades": [
+    {
+      "action": "Deposit",
+      "closeTime": "10/25/2026 23:38",
+      "commission": 0.0,
+      "openTime": "10/25/2026 23:38",
+      "pips": 0.0,
+      "profit": 10000.0,
+      "swap": 0.0,
+      "symbol": ""
+    },
+    {
+      "action": "Buy",
+      "closeTime": "10/26/2026 02:45",
+      "commission": -0.7,
+      "openTime": "10/26/2026 02:40",
+      "pips": -736.0,
+      "profit": -74.3,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Sell",
+      "closeTime": "10/26/2026 17:41",
+      "commission": -0.42,
+      "openTime": "10/26/2026 16:30",
+      "pips": -1264.0,
+      "profit": -76.26,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Buy",
+      "closeTime": "10/26/2026 20:00",
+      "commission": -0.42,
+      "openTime": "10/26/2026 08:01",
+      "pips": 408.0,
+      "profit": 24.06,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Buy",
+      "closeTime": "10/27/2026 11:27",
+      "commission": -0.42,
+      "openTime": "10/27/2026 07:06",
+      "pips": -2820.0,
+      "profit": -169.62,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Buy",
+      "closeTime": "10/27/2026 17:04",
+      "commission": -0.42,
+      "openTime": "10/26/2026 06:00",
+      "pips": 3704.0,
+      "profit": 221.82,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Sell",
+      "closeTime": "10/28/2026 21:43",
+      "commission": -0.36,
+      "openTime": "10/28/2026 04:35",
+      "pips": -1386.0,
+      "profit": -69.66,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Sell",
+      "closeTime": "10/29/2026 04:20",
+      "commission": -0.42,
+      "openTime": "10/29/2026 03:05",
+      "pips": -1143.0,
+      "profit": -69.0,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Buy",
+      "closeTime": "10/29/2026 14:52",
+      "commission": -0.42,
+      "openTime": "10/29/2026 14:15",
+      "pips": -1053.0,
+      "profit": -63.6,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Sell",
+      "closeTime": "10/29/2026 16:35",
+      "commission": -0.36,
+      "openTime": "10/29/2026 14:55",
+      "pips": -1104.0,
+      "profit": -55.56,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Sell",
+      "closeTime": "10/29/2026 20:00",
+      "commission": -0.36,
+      "openTime": "10/29/2026 07:13",
+      "pips": 1780.0,
+      "profit": 88.64,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Sell",
+      "closeTime": "10/30/2026 04:12",
+      "commission": -0.28,
+      "openTime": "10/29/2026 05:40",
+      "pips": 4507.0,
+      "profit": 180.0,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Sell",
+      "closeTime": "10/30/2026 16:12",
+      "commission": -0.42,
+      "openTime": "10/30/2026 13:15",
+      "pips": 3905.0,
+      "profit": 233.88,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    }
+  ]
 }
