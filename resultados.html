@@ -98,7 +98,7 @@ main{padding:68px 0 90px}.eyebrow{font-size:11px;letter-spacing:.28em;text-trans
 <footer class="footer"><div class="wrap footer-row"><a href="/">TETRARCH · <span data-es="Volver al sitio" data-en="Back to website">Volver al sitio</span></a><a href="https://www.myfxbook.com/members/Tetrarch/tetrarch/12278068" target="_blank" rel="noopener">Myfxbook ↗</a></div></footer>
 <script>
 const langButtons=[...document.querySelectorAll('[data-lang]')];
-let accountCache=null, tradesCache=[];
+let accountCache=null, tradesCache=[], reportsCache=[];
 function currentLang(){return document.documentElement.lang==='es'?'es':'en'}
 function setLang(lang){
   document.documentElement.lang=lang;
@@ -140,7 +140,6 @@ function renderAccount(){
     tbody.appendChild(tr);
   });
 }
-let reportsCache=[];
 function renderReports(){
   const reports=reportsCache;
   if(!reports.length)return;
