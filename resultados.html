@@ -38,6 +38,33 @@ main{padding:68px 0 90px}.eyebrow{font-size:11px;letter-spacing:.28em;text-trans
 <p data-es="Seguimiento del rendimiento de Tetrarch Gold EA mediante informes semanales. Publicamos el comportamiento global del sistema: cuatro motores coordinados y una sola gestión de riesgo." data-en="Performance tracking for Tetrarch Gold EA through weekly reports. We publish the integrated system's overall results: four coordinated engines and one unified risk-management framework.">Seguimiento del rendimiento de Tetrarch Gold EA mediante informes semanales. Publicamos el comportamiento global del sistema: cuatro motores coordinados y una sola gestión de riesgo.</p>
 <a class="btn secondary" href="https://www.myfxbook.com/members/Tetrarch/tetrarch/12278068" target="_blank" rel="noopener" data-es="Consultar cuenta en Myfxbook ↗" data-en="View account on Myfxbook ↗">Consultar cuenta en Myfxbook ↗</a>
 </section>
+
+<section class="panel" id="account-panel">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <div><h2 data-es="Estado actual de la cuenta" data-en="Current account status">Estado actual de la cuenta</h2><div class="muted" id="account-meta">Cargando datos de Myfxbook…</div></div>
+    <span class="status" id="account-status" data-es="Cuenta real" data-en="Live account">Cuenta real</span>
+  </div>
+  <div class="metrics">
+    <div class="metric"><small data-es="Balance" data-en="Balance">Balance</small><strong id="acc-balance">—</strong></div>
+    <div class="metric"><small data-es="Equity" data-en="Equity">Equity</small><strong id="acc-equity">—</strong></div>
+    <div class="metric"><small data-es="Ganancia acumulada" data-en="Overall gain">Ganancia acumulada</small><strong id="acc-gain">—</strong></div>
+    <div class="metric"><small data-es="Drawdown máximo informado" data-en="Reported drawdown">Drawdown máximo informado</small><strong id="acc-dd">—</strong></div>
+    <div class="metric"><small data-es="Profit Factor" data-en="Profit Factor">Profit Factor</small><strong id="acc-pf">—</strong></div>
+    <div class="metric"><small data-es="Resultado flotante" data-en="Floating P/L">Resultado flotante</small><strong id="acc-floating">—</strong></div>
+    <div class="metric"><small data-es="Operaciones cerradas" data-en="Closed trades">Operaciones cerradas</small><strong id="acc-trade-count">—</strong></div>
+    <div class="metric"><small data-es="Broker / servidor" data-en="Broker / server">Broker / servidor</small><strong id="acc-server">—</strong></div>
+  </div>
+  <p class="note" id="account-updated"></p>
+  <div class="table-wrap" style="margin-top:20px">
+    <h3 data-es="Últimas operaciones cerradas" data-en="Latest closed trades">Últimas operaciones cerradas</h3>
+    <table><thead><tr>
+      <th data-es="Dirección" data-en="Side">Dirección</th><th data-es="Símbolo" data-en="Symbol">Símbolo</th>
+      <th data-es="Apertura" data-en="Opened">Apertura</th><th data-es="Cierre" data-en="Closed">Cierre</th>
+      <th data-es="Resultado" data-en="P/L">Resultado</th><th data-es="Pips" data-en="Pips">Pips</th>
+    </tr></thead><tbody id="account-trades"><tr><td colspan="6" class="muted" data-es="Cargando operaciones…" data-en="Loading trades…">Cargando operaciones…</td></tr></tbody></table>
+  </div>
+  <p class="note" data-es="Datos sincronizados automáticamente desde Myfxbook. El balance y la equity se muestran en la moneda informada por el broker (USC); el resultado flotante es la diferencia entre equity y balance. El historial de operaciones corresponde a operaciones cerradas." data-en="Data automatically synchronized from Myfxbook. Balance and equity use the broker-reported account currency (USC); floating P/L is the difference between equity and balance. The trade history shows closed trades.">Datos sincronizados automáticamente desde Myfxbook. El balance y la equity se muestran en la moneda informada por el broker (USC); el resultado flotante es la diferencia entre equity y balance. El historial de operaciones corresponde a operaciones cerradas.</p>
+</section>
 <section class="panel">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
 <div><h2 data-es="Último informe semanal" data-en="Latest weekly report">Último informe semanal</h2><div class="muted" id="period" data-es="Esperando la primera sincronización" data-en="Awaiting first synchronization">Esperando la primera sincronización</div></div>
@@ -71,13 +98,83 @@ main{padding:68px 0 90px}.eyebrow{font-size:11px;letter-spacing:.28em;text-trans
 <footer class="footer"><div class="wrap footer-row"><a href="/">TETRARCH · <span data-es="Volver al sitio" data-en="Back to website">Volver al sitio</span></a><a href="https://www.myfxbook.com/members/Tetrarch/tetrarch/12278068" target="_blank" rel="noopener">Myfxbook ↗</a></div></footer>
 <script>
 const langButtons=[...document.querySelectorAll('[data-lang]')];
-function setLang(lang){document.documentElement.lang=lang;langButtons.forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));document.querySelectorAll('[data-es][data-en]').forEach(el=>{const v=el.dataset[lang];if(v!==undefined)el.innerHTML=v});}
-langButtons.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));setLang('es');
-const fmt=(v,currency)=>new Intl.NumberFormat(document.documentElement.lang==='es'?'es-AR':'en-US',{style:'currency',currency:currency||'USD',maximumFractionDigits:2}).format(Number(v));
-async function loadReports(){try{const r=await fetch('/data/reports.json',{cache:'no-store'});if(!r.ok)throw new Error('reports unavailable');const data=await r.json();const reports=(data.reports||[]).filter(x=>x.status==='published').sort((a,b)=>b.weekEnd.localeCompare(a.weekEnd));if(!reports.length)return;
-const x=reports[0];document.getElementById('empty-state').style.display='none';document.getElementById('report-status').textContent=document.documentElement.lang==='es'?'Informe publicado':'Report published';document.getElementById('period').textContent=x.periodLabel;document.getElementById('net').textContent=fmt(x.netProfit,x.currency);document.getElementById('return').textContent=Number(x.returnPct).toFixed(2)+'%';document.getElementById('pf').textContent=x.profitFactor==null?'—':Number(x.profitFactor).toFixed(2);document.getElementById('trades').textContent=x.tradeCount??'—';document.getElementById('updated').textContent=(document.documentElement.lang==='es'?'Actualizado: ':'Updated: ')+new Date(data.updatedAt).toLocaleString(document.documentElement.lang==='es'?'es-AR':'en-US');
-document.getElementById('history').innerHTML=reports.map(x=>`<tr><td>${x.periodLabel}</td><td>${fmt(x.netProfit,x.currency)}</td><td>${Number(x.returnPct).toFixed(2)}%</td><td>${x.profitFactor==null?'—':Number(x.profitFactor).toFixed(2)}</td><td>${x.tradeCount??'—'}</td></tr>`).join('');
-}catch(e){console.warn('No se pudo cargar el historial público',e)}}
-loadReports();
+let accountCache=null, tradesCache=[];
+function currentLang(){return document.documentElement.lang==='es'?'es':'en'}
+function setLang(lang){
+  document.documentElement.lang=lang;
+  langButtons.forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  document.querySelectorAll('[data-es][data-en]').forEach(el=>{const v=el.dataset[lang];if(v!==undefined)el.innerHTML=v});
+  renderAccount();
+  renderReports();
+}
+langButtons.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+setLang('es');
+const numberFmt=v=>Number(v).toLocaleString(currentLang()==='es'?'es-AR':'en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const money=v=>numberFmt(v)+' USC';
+const dateFmt=v=>{
+  if(!v)return '—';
+  const m=String(v).match(/^(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})$/);
+  if(!m)return String(v);
+  return currentLang()==='es'?m[1]+'/'+m[2]+'/'+m[3]+' '+m[4]+':'+m[5]:m[3]+'-'+m[1]+'-'+m[2]+' '+m[4]+':'+m[5];
+};
+function renderAccount(){
+  if(!accountCache)return;
+  const s=accountCache.stats||{};
+  document.getElementById('account-meta').textContent=(s.name||'Tetrarch')+' · '+(s.demo?(currentLang()==='es'?'Demo':'Demo'):(currentLang()==='es'?'Cuenta real':'Live account'))+' · '+(s.currency||'');
+  document.getElementById('acc-balance').textContent=money(s.balance);
+  document.getElementById('acc-equity').textContent=money(s.equity);
+  document.getElementById('acc-gain').textContent=numberFmt(s.gain)+'%';
+  document.getElementById('acc-dd').textContent=numberFmt(s.drawdown)+'%';
+  document.getElementById('acc-pf').textContent=s.profitFactor==null?'—':numberFmt(s.profitFactor);
+  document.getElementById('acc-floating').textContent=money(Number(s.equity||0)-Number(s.balance||0));
+  document.getElementById('acc-trade-count').textContent=tradesCache.filter(t=>t.action!=='Deposit'&&t.action!=='Credit').length;
+  document.getElementById('acc-server').textContent=s.server||'—';
+  const synced=accountCache.syncedAt?new Date(accountCache.syncedAt).toLocaleString(currentLang()==='es'?'es-AR':'en-US'):'—';
+  document.getElementById('account-updated').textContent=(currentLang()==='es'?'Última sincronización: ':'Last sync: ')+synced;
+  const rows=tradesCache.filter(t=>t.action!=='Deposit'&&t.action!=='Credit').slice().reverse().slice(0,15);
+  const tbody=document.getElementById('account-trades');tbody.replaceChildren();
+  if(!rows.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=6;td.className='muted';td.textContent=currentLang()==='es'?'No hay operaciones cerradas disponibles.':'No closed trades available.';tr.appendChild(td);tbody.appendChild(tr);return}
+  rows.forEach(t=>{
+    const tr=document.createElement('tr');
+    [t.action||'—',t.symbol||'—',dateFmt(t.openTime),dateFmt(t.closeTime),money(t.profit),numberFmt(t.pips||0)].forEach((v,i)=>{const td=document.createElement('td');td.textContent=v;if(i===4)td.style.color=Number(t.profit)>=0?'var(--green)':'var(--red)';tr.appendChild(td)});
+    tbody.appendChild(tr);
+  });
+}
+let reportsCache=[];
+function renderReports(){
+  const reports=reportsCache;
+  if(!reports.length)return;
+  const x=reports[0],lang=currentLang();
+  document.getElementById('empty-state').style.display='none';
+  document.getElementById('report-status').textContent=lang==='es'?'Informe publicado':'Report published';
+  document.getElementById('period').textContent=x.periodLabel;
+  document.getElementById('net').textContent=numberFmt(x.netProfit)+' '+(x.currency||'');
+  document.getElementById('return').textContent=Number(x.returnPct).toFixed(2)+'%';
+  document.getElementById('pf').textContent=x.profitFactor==null?'—':Number(x.profitFactor).toFixed(2);
+  document.getElementById('trades').textContent=x.tradeCount??'—';
+  document.getElementById('updated').textContent=(lang==='es'?'Actualizado: ':'Updated: ')+new Date(x.updatedAt||'').toLocaleString(lang==='es'?'es-AR':'en-US');
+  const tbody=document.getElementById('history');tbody.replaceChildren();
+  reports.forEach(x=>{const tr=document.createElement('tr');[x.periodLabel,numberFmt(x.netProfit)+' '+(x.currency||''),Number(x.returnPct).toFixed(2)+'%',x.profitFactor==null?'—':Number(x.profitFactor).toFixed(2),x.tradeCount??'—'].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.appendChild(td)});tbody.appendChild(tr)});
+}
+async function loadAccount(){
+  try{
+    const [ar,tr]=await Promise.all([fetch('/data/account.json',{cache:'no-store'}),fetch('/data/trades.json',{cache:'no-store'})]);
+    if(!ar.ok||!tr.ok)throw new Error('Account data unavailable');
+    accountCache=await ar.json();const td=await tr.json();tradesCache=td.trades||[];
+    renderAccount();
+  }catch(e){
+    console.warn('No se pudo cargar la cuenta pública',e);
+    document.getElementById('account-meta').textContent=currentLang()==='es'?'No se pudieron cargar los datos de la cuenta.':'Could not load account data.';
+    document.getElementById('account-trades').innerHTML='<tr><td colspan="6" class="muted">'+(currentLang()==='es'?'Datos temporalmente no disponibles.':'Data temporarily unavailable.')+'</td></tr>';
+  }
+}
+async function loadReports(){
+  try{
+    const r=await fetch('/data/reports.json',{cache:'no-store'});if(!r.ok)throw new Error('reports unavailable');
+    const data=await r.json();reportsCache=(data.reports||[]).filter(x=>x.status==='published').sort((a,b)=>b.weekEnd.localeCompare(a.weekEnd));
+    renderReports();
+  }catch(e){console.warn('No se pudo cargar el historial público',e)}
+}
+loadAccount();loadReports();
 </script>
 </body></html>
