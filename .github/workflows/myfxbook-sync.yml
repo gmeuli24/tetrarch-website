@@ -1,0 +1,38 @@
+name: Sync Tetrarch Myfxbook data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Daily at 13:15 UTC (10:15 Argentina). Reports are NOT published automatically yet.
+    - cron: "15 13 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Synchronize Myfxbook
+        env:
+          MYFXBOOK_EMAIL: ${{ secrets.MYFXBOOK_EMAIL }}
+          MYFXBOOK_PASSWORD: ${{ secrets.MYFXBOOK_PASSWORD }}
+          MYFXBOOK_ACCOUNT_ID: "12278068"
+        run: python scripts/sync_myfxbook.py
+      - name: Commit synchronized data
+        run: |
+          git config user.name "tetrarch-results-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/account.json data/trades.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: sync Myfxbook account data"
+            git push
+          else
+            echo "No data changes to commit"
+          fi
