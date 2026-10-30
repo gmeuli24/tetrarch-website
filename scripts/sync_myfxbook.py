@@ -70,7 +70,7 @@ try:
     write_json(trades_file, {"schemaVersion":1,"account":ACCOUNT_ID,"syncedAt":datetime.now(timezone.utc).isoformat(),"trades":merged})
     # Public-safe account fields only; exclude login/session and other personal metadata.
     fields = ("name","accountId","gain","absGain","daily","monthly","profit","balance","equity",
-              "drawdown","profitFactor","pips","currency","demo","leverage","server","firstTradeDate")
+              "drawdown","profitFactor","pips","lastUpdateDate","currency","demo","leverage","server","firstTradeDate")
     stats = {k: account.get(k) for k in fields if k in account}
     server = stats.get("server")
     if isinstance(server, dict):
