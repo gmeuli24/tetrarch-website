@@ -44,7 +44,7 @@ main{padding:68px 0 90px}.eyebrow{font-size:11px;letter-spacing:.28em;text-trans
 <div class="eyebrow" data-es="TRANSPARENCIA · CUENTA REAL" data-en="TRANSPARENCY · LIVE ACCOUNT">TRANSPARENCIA · CUENTA REAL</div>
 <h1 data-es="Resultados de <span style='color:var(--gold2)'>Tetrarch</span>" data-en="<span style='color:var(--gold2)'>Tetrarch</span> performance">Resultados de <span style="color:var(--gold2)">Tetrarch</span></h1>
 <p data-es="Seguimiento del rendimiento de Tetrarch Gold EA mediante informes semanales. Publicamos el comportamiento global del sistema: cuatro motores coordinados y una sola gestión de riesgo." data-en="Performance tracking for Tetrarch Gold EA through weekly reports. We publish the integrated system's overall results: four coordinated engines and one unified risk-management framework.">Seguimiento del rendimiento de Tetrarch Gold EA mediante informes semanales. Publicamos el comportamiento global del sistema: cuatro motores coordinados y una sola gestión de riesgo.</p>
-<a class="btn secondary" href="https://www.myfxbook.com/members/Tetrarch/tetrarch/12278068" target="_blank" rel="noopener" data-es="Consultar cuenta en Myfxbook ↗" data-en="View account on Myfxbook ↗">Consultar cuenta en Myfxbook ↗</a>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="https://www.mql5.com/es/market/product/203924?source=Site+Profile+Seller" target="_blank" rel="noopener" data-cta="results-top" data-es="Probar la demo en MQL5 ↗" data-en="Try the demo on MQL5 ↗">Probar la demo en MQL5 ↗</a><a class="btn secondary" href="https://www.myfxbook.com/members/Tetrarch/tetrarch/12278068" target="_blank" rel="noopener" data-es="Consultar cuenta en Myfxbook ↗" data-en="View account on Myfxbook ↗">Consultar cuenta en Myfxbook ↗</a></div>
 </section>
 
 <section class="panel" id="account-panel">
@@ -101,6 +101,11 @@ main{padding:68px 0 90px}.eyebrow{font-size:11px;letter-spacing:.28em;text-trans
 <h2 data-es="Metodología y verificación" data-en="Methodology and verification">Metodología y verificación</h2>
 <p class="muted" data-es="Los informes se elaboran a partir de los datos de la cuenta publicada en Myfxbook y se archivan por período. Se presentan los resultados globales de Tetrarch, no resultados aislados de sus motores. Las cifras se publican después de comprobar la sincronización y conciliación de operaciones." data-en="Reports are prepared from the account data published on Myfxbook and archived by period. We present Tetrarch's overall results, not isolated engine results. Figures are published after synchronization and trade reconciliation checks.">Los informes se elaboran a partir de los datos de la cuenta publicada en Myfxbook y se archivan por período. Se presentan los resultados globales de Tetrarch, no resultados aislados de sus motores. Las cifras se publican después de comprobar la sincronización y conciliación de operaciones.</p>
 <p class="note" data-es="Tetrarch Gold EA es software para MetaTrader 5. El trading de CFD sobre oro con apalancamiento implica un riesgo elevado, incluida la pérdida del capital. Esta información no constituye asesoramiento financiero." data-en="Tetrarch Gold EA is software for MetaTrader 5. Leveraged gold CFD trading involves substantial risk, including loss of capital. This information is not financial advice.">Tetrarch Gold EA es software para MetaTrader 5. El trading de CFD sobre oro con apalancamiento implica un riesgo elevado, incluida la pérdida del capital. Esta información no constituye asesoramiento financiero.</p>
+</section>
+<section class="panel">
+<h2 data-es="Pruébalo en tu propio MetaTrader 5" data-en="Test it in your own MetaTrader 5">Pruébalo en tu propio MetaTrader 5</h2>
+<p class="muted" data-es="Prueba la demo en el Probador de estrategias de MetaTrader 5 antes de decidir. Los resultados pasados no garantizan resultados futuros." data-en="Try the demo in the MetaTrader 5 Strategy Tester before you decide. Past results do not guarantee future results.">Prueba la demo en el Probador de estrategias de MetaTrader 5 antes de decidir. Los resultados pasados no garantizan resultados futuros.</p>
+<a class="btn" href="https://www.mql5.com/es/market/product/203924?source=Site+Profile+Seller" target="_blank" rel="noopener" data-cta="results-bottom" data-es="Ver en MQL5 ↗" data-en="View on MQL5 ↗">Ver en MQL5 ↗</a>
 </section>
 </main>
 <footer class="footer"><div class="wrap footer-row"><a href="/">TETRARCH · <span data-es="Volver al sitio" data-en="Back to website">Volver al sitio</span></a><a href="https://www.myfxbook.com/members/Tetrarch/tetrarch/12278068" target="_blank" rel="noopener">Myfxbook ↗</a></div></footer>
@@ -184,5 +189,18 @@ async function loadReports(){
   }catch(e){console.warn('No se pudo cargar el historial público',e)}
 }
 loadAccount();loadReports();
+</script>
+<script>
+  // Registra los clics hacia la publicación de Tetrarch en MQL5 (y desde qué botón).
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('a[href*="mql5.com"]');
+    if (!link || typeof window.gtag !== 'function') return;
+    window.gtag('event', 'mql5_click', {
+      link_url: link.href,
+      link_text: (link.innerText || link.textContent || '').trim(),
+      link_location: link.dataset.cta || 'other',
+      transport_type: 'beacon'
+    });
+  });
 </script>
 </body></html>
