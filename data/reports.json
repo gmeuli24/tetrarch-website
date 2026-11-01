@@ -1,6 +1,20 @@
 {
-  "schemaVersion": 1,
   "account": "12278068",
-  "updatedAt": null,
-  "reports": []
+  "reports": [
+    {
+      "currency": "USC",
+      "netProfit": 914.18,
+      "periodLabel": "26/10/2026 – 30/10/2026",
+      "profitFactor": 2.58,
+      "returnPct": 9.14,
+      "startBalance": 10000.0,
+      "status": "published",
+      "tradeCount": 14,
+      "updatedAt": "2026-11-01T19:30:39.434641+00:00",
+      "weekEnd": "2026-10-30",
+      "weekStart": "2026-10-26"
+    }
+  ],
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-01T19:30:39.434650+00:00"
 }

@@ -27,11 +27,13 @@ jobs:
           MYFXBOOK_PASSWORD: ${{ secrets.MYFXBOOK_PASSWORD }}
           MYFXBOOK_ACCOUNT_ID: "12278068"
         run: python scripts/sync_myfxbook.py
+      - name: Build weekly reports
+        run: python scripts/build_reports.py
       - name: Commit synchronized data
         run: |
           git config user.name "tetrarch-results-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/account.json data/trades.json
+          git add data/account.json data/trades.json data/reports.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: sync Myfxbook account data"
             git push
