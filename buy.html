@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WC7J133CE5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WC7J133CE5');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Tetrarch EA: automated gold (XAUUSD) trading robot for MetaTrader 5. Four strategies, one risk manager, stop loss on every trade, no martingale or grid.">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" href="/favicon.png?v=2">
+<title>Tetrarch EA – Gold Trading Robot for MetaTrader 5</title>
+<style>
+:root{--bg:#080807;--panel:#12100b;--gold:#e8bd60;--gold2:#ffdf8c;--text:#f4ead4;--muted:#b9ad91;--line:#574521;--green:#8ed6a2;--red:#e7796d;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% 5%,#30230d 0,transparent 28%),var(--bg);color:var(--text);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.top{position:sticky;top:0;z-index:5;background:#080807ef;backdrop-filter:blur(16px);border-bottom:1px solid #302614}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}.brand{display:flex;align-items:center;gap:12px;color:var(--gold2);font-weight:850;letter-spacing:.24em;font-size:19px}.mark{width:42px;height:42px;object-fit:contain}
+.links{display:flex;gap:20px;align-items:center;color:#d4c7a8;font-size:13px}.links a:hover{color:var(--gold2)}.lang{display:flex;border:1px solid var(--line);border-radius:99px;padding:3px;gap:3px}.lang button{border:0;background:transparent;color:var(--muted);padding:7px 10px;border-radius:99px;cursor:pointer;font-weight:700}.lang button.active{background:var(--gold);color:#161108}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:8px;font-weight:800;font-size:13px;border:1px solid var(--gold);background:linear-gradient(135deg,var(--gold2),#c28c31);color:#171006}.btn.secondary{background:transparent;color:var(--gold2)}
+main{padding:68px 0 90px}.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:800}.intro{max-width:780px;margin-bottom:34px}.intro h1{font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-.04em;margin:14px 0}.intro p{color:var(--muted);font-size:17px}
+.panel{background:linear-gradient(145deg,#17130c,#0e0d09);border:1px solid var(--line);border-radius:15px;padding:24px;margin:18px 0}.panel h2{margin:0 0 8px;font-size:23px}.muted{color:var(--muted)}.status{display:inline-flex;border:1px solid #735726;color:var(--gold2);border-radius:99px;padding:4px 10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}.metric{background:#0c0b08;border:1px solid #392d18;border-radius:10px;padding:16px}.metric small{display:block;color:#a99a79;text-transform:uppercase;letter-spacing:.08em;font-size:10px}.metric strong{display:block;font-size:24px;color:var(--gold2);margin-top:5px;overflow-wrap:anywhere}
+.empty{padding:30px;text-align:center;border:1px dashed #67502a;border-radius:12px;background:#100e09}.empty h3{margin:0 0 8px;color:var(--gold2)}.empty p{margin:0 auto 18px;max-width:650px;color:var(--muted);font-size:14px}
+.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:13px 11px;border-bottom:1px solid #332817;white-space:nowrap}th{color:var(--gold2);font-size:11px;text-transform:uppercase;letter-spacing:.08em}td{color:#d8cdb4}
+.note{font-size:12px;color:#9f9275;margin-top:16px}.footer{border-top:1px solid #2b2111;padding:28px 0;color:#94876c;font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:850px){.metrics{grid-template-columns:repeat(2,1fr)}.links{gap:10px}.nav{flex-wrap:wrap;justify-content:flex-start;padding:8px 0;row-gap:2px}.nav::after{content:'';order:3;flex-basis:100%;height:0}.brand{order:1;margin-right:auto}.links{display:contents}.lang{order:2}.navlink{order:4;display:inline-block!important;font-size:13px;padding:6px 0;margin-right:16px;color:#d4c7a8}.navlink:last-of-type{margin-right:0}}
+@media(max-width:560px){.wrap{width:calc(100% - 28px)}.nav{min-height:66px}.brand{font-size:15px}.metrics{grid-template-columns:1fr 1fr}.metric strong{font-size:20px}main{padding-top:45px}.intro p{font-size:15px}.panel{padding:17px}}
+</style>
+<style>
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:60px 0 30px}
+.hero h1{font-size:clamp(36px,5vw,60px);line-height:1.04;letter-spacing:-.035em;margin:14px 0}
+.hero p.lead{color:var(--muted);font-size:18px;margin:0 0 24px}
+.hero img{width:100%;border-radius:16px;border:1px solid var(--line);display:block}
+.price{display:flex;align-items:baseline;gap:12px;margin:0 0 16px}.price b{font-size:40px;color:var(--gold2)}.price span{color:var(--muted);font-size:14px}
+.btn.big{padding:16px 28px;font-size:16px}
+.ticks{list-style:none;padding:0;margin:18px 0 0;color:#d8cdb4;font-size:14px;display:grid;gap:6px}.ticks li::before{content:'✔ ';color:var(--gold)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:linear-gradient(145deg,#17130c,#0e0d09);border:1px solid var(--line);border-radius:14px;padding:20px}.card h3{margin:0 0 6px;color:var(--gold2);font-size:18px}.card p{margin:0;color:var(--muted);font-size:14px}
+section.blk{padding:46px 0;border-top:1px solid #2b2111}section.blk h2{font-size:clamp(26px,3.4vw,38px);letter-spacing:-.025em;margin:10px 0 18px}
+.imgfull{width:100%;border-radius:14px;border:1px solid var(--line);display:block;margin-top:16px}
+.bt td,.bt th{white-space:normal}
+details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:10px 0;background:#0e0d09}summary{cursor:pointer;font-weight:700;color:var(--text)}details p{color:var(--muted);margin:10px 0 0;font-size:14px}
+.cta{text-align:center;padding:50px 0}.cta h2{margin-bottom:8px}
+.risk{font-size:12px;color:#9f9275;border:1px solid #3a2e17;border-radius:10px;padding:14px 16px;margin-top:20px}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:36px}.grid4{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}}
+@media(max-width:850px){.navbuy{display:none}}
+@media(max-width:520px){.grid4{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="brand" href="#"><img class="mark" src="/favicon.png?v=2" alt=""><span>TETRARCH</span></a>
+<nav class="links"><a class="navlink" href="#strategies">Strategies</a><a class="navlink" href="#results">Backtests</a><a class="navlink" href="#faq">FAQ</a><a class="btn navbuy" href="CHECKOUT_URL" data-cta="buy-nav">Buy now</a></nav>
+</div></header>
+<main class="wrap" style="padding:0">
+<section class="hero">
+<div>
+<div class="eyebrow">AUTOMATED GOLD TRADING · METATRADER 5</div>
+<h1>One robot. <span style="color:var(--gold2)">Four strategies.</span> One risk manager.</h1>
+<p class="lead">Tetrarch EA trades gold (XAUUSD) automatically on MetaTrader 5. Gold trends some days, ranges on others, and is often decided at the European open — Tetrarch runs four independent strategies so it is not betting on a single market phase.</p>
+<div class="price"><b>$189</b><span>one-time payment · 7-day money-back guarantee</span></div>
+<a class="btn big" href="CHECKOUT_URL" data-cta="buy-hero">Buy Tetrarch EA →</a>
+<ul class="ticks"><li>Stop loss on every trade</li><li>No martingale, no grid, no averaging down</li><li>License key emailed instantly after payment</li></ul>
+</div>
+<img src="/img/img03.webp" alt="Tetrarch EA – algorithmic gold trading">
+</section>
+
+<section class="blk" id="strategies">
+<div class="eyebrow">THE FOUR STRATEGIES</div>
+<h2>Each one wins in a different market phase</h2>
+<div class="grid4">
+<div class="card"><h3>Momentum</h3><p>Catches fast intraday moves. At 3× the risk it locks in profit and lets the rest run with a trailing stop.</p></div>
+<div class="card"><h3>Multi-day breakout</h3><p>Enters when gold breaks the high or low of recent days, targets up to 5× the risk and closes before the weekend.</p></div>
+<div class="card"><h3>Pullback</h3><p>Waits for a confirmed change in structure and enters on the pullback instead of chasing price.</p></div>
+<div class="card"><h3>Session</h3><p>Follows the direction gold usually takes at the European open. At most one trade per day.</p></div>
+</div>
+</section>
+
+<section class="blk">
+<div class="eyebrow">RISK MANAGEMENT</div>
+<h2>Built to stay in the game</h2>
+<div class="grid3">
+<div class="card"><h3>Stop loss always</h3><p>No position is ever opened without a stop. Lot size is calculated from your balance and the stop distance.</p></div>
+<div class="card"><h3>Daily loss limit</h3><p>When the day's loss plus open risk reaches the limit, no new trades until the next day.</p></div>
+<div class="card"><h3>Two simple choices</h3><p>Pick a risk profile — Conservative, Standard, Aggressive or Prop firm — and whether to compound. Everything else is preset.</p></div>
+</div>
+<img class="imgfull" src="/img/img04.webp" alt="Tetrarch risk management">
+<img class="imgfull" src="/img/perfiles-en.webp" alt="Tetrarch risk profiles">
+</section>
+
+<section class="blk" id="results">
+<div class="eyebrow">SIMULATED BACKTESTS</div>
+<h2>Tested in hard years and good years</h2>
+<div class="table-wrap"><table class="bt"><thead><tr><th>Period (data)</th><th>Return</th><th>Profit factor</th><th>Max drawdown</th><th>Trades</th></tr></thead><tbody>
+<tr><td>Jan 2020 – Aug 2024 (Vantage) · gold mostly ranging</td><td>+250%</td><td>1.17</td><td>21.4%</td><td>2,524</td></tr>
+<tr><td>Jan 2024 – Oct 2026 (FundedNext) · strong trend</td><td>+395%</td><td>1.46</td><td>10.5%</td><td>1,521</td></tr>
+</tbody></table></div>
+<p class="note">MetaTrader 5 Strategy Tester, every tick based on real ticks, real spread and commission, Standard profile, no compounding. Simulated results do not guarantee future results. Tetrarch also runs on a live account with public tracking on Myfxbook (user: Tetrarch), including losing weeks.</p>
+</section>
+
+<section class="blk">
+<div class="eyebrow">WHAT YOU GET</div>
+<h2>Everything you need to start</h2>
+<div class="grid3">
+<div class="card"><h3>Windows installer</h3><p>Installs Tetrarch in every MetaTrader 5 terminal on your computer and copies the license-server address for you.</p></div>
+<div class="card"><h3>Personal license</h3><p>Emailed right after payment. Valid for 1 live account plus unlimited demo accounts.</p></div>
+<div class="card"><h3>Updates &amp; support</h3><p>Free updates of the robot and email support. Step-by-step PDF installation guide included.</p></div>
+</div>
+<h3 style="margin-top:28px">Requirements</h3>
+<ul class="ticks"><li>MetaTrader 5 on Windows (or a Windows VPS) and a hedging account with XAUUSD</li><li>Recommended capital: from $5,000 on a standard account, or from about $100 on a cent account</li><li>Low gold spread and a VPS so the robot runs Monday to Friday without interruption</li></ul>
+</section>
+
+<section class="blk" id="faq">
+<div class="eyebrow">FAQ</div>
+<h2>Questions</h2>
+<details><summary>How do I receive my license?</summary><p>Right after the payment is approved you get an email with your license key. Download the installer, run it and paste the key.</p></details>
+<details><summary>How many accounts can I use it on?</summary><p>One live account and as many demo accounts as you like.</p></details>
+<details><summary>Does it work on Mac?</summary><p>MetaTrader 5 for Mac does not run this kind of robot reliably. Use a Windows VPS.</p></details>
+<details><summary>Is it suitable for prop firm accounts?</summary><p>Yes, with the Prop firm profile, designed for loss limits of 4% daily and 8% total or wider. Always check your prop firm's rules.</p></details>
+<details><summary>Does it guarantee profits?</summary><p>No. No trading system can guarantee profits. There are losing weeks and months.</p></details>
+<details><summary>Can I get a refund?</summary><p>Yes, within 7 days of purchase through Hotmart. The license is deactivated when the refund is processed.</p></details>
+</section>
+
+<section class="cta">
+<h2>Ready to automate your gold trading?</h2>
+<p class="muted">$189 one-time · 7-day money-back guarantee · instant license by email</p>
+<a class="btn big" href="CHECKOUT_URL" data-cta="buy-bottom">Buy Tetrarch EA →</a>
+<div class="risk"><b>Risk warning.</b> Trading leveraged CFDs carries a high level of risk and may result in the loss of all your capital. Past results, live or simulated, do not guarantee future results. Tetrarch EA is an automation tool and does not constitute financial advice. Contact: CONTACT_EMAIL</div>
+</section>
+</main>
+<footer class="footer"><div class="wrap footer-row"><span>TETRARCH EA · Contact: CONTACT_EMAIL</span><span>Payments processed securely by Hotmart</span></div></footer>
+<script>document.querySelectorAll('[data-cta]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','buy_click',{cta:a.dataset.cta})}));</script>
+</body></html>
