@@ -11,7 +11,7 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Probá Tetrarch Gold EA gratis durante 14 días en tu MetaTrader 5, en cuenta demo o real.">
+<meta name="description" content="Probá Tetrarch Gold EA gratis: sin límite en cuenta demo y 14 días en cuenta real.">
 <title>Prueba gratis | Tetrarch Gold EA</title>
 <style>
 :root{--bg:#080807;--panel:#12100b;--gold:#e8bd60;--gold2:#ffdf8c;--text:#f4ead4;--muted:#b9ad91;--line:#574521;--green:#8ed6a2;--red:#e7796d;--max:1180px}
@@ -57,9 +57,9 @@ ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#d8cdb4;font-size:14px}
 </nav></div></header>
 <main class="wrap">
 <section class="intro">
-<div class="eyebrow" data-es="PRUEBA GRATIS · 14 DÍAS" data-en="FREE TRIAL · 14 DAYS">PRUEBA GRATIS · 14 DÍAS</div>
-<h1 data-es="Probá <span style='color:var(--gold2)'>Tetrarch</span> 14 días gratis" data-en="Try <span style='color:var(--gold2)'>Tetrarch</span> free for 14 days">Probá <span style="color:var(--gold2)">Tetrarch</span> 14 días gratis</h1>
-<p data-es="Recibí al instante una clave para usar Tetrarch 14 días en tu MetaTrader 5, en cuenta demo o real: el mismo bot que corre en nuestra cuenta real." data-en="Get an instant key to run Tetrarch for 14 days on your MetaTrader 5, demo or live account — the same bot that runs on our live account.">Recibí al instante una clave para usar Tetrarch 14 días en tu MetaTrader 5, en cuenta demo o real: el mismo bot que corre en nuestra cuenta real.</p>
+<div class="eyebrow" data-es="PRUEBA GRATIS · DEMO SIN LÍMITE · 14 DÍAS EN REAL" data-en="FREE TRIAL · UNLIMITED DEMO · 14 DAYS LIVE">PRUEBA GRATIS · DEMO SIN LÍMITE · 14 DÍAS EN REAL</div>
+<h1 data-es="Probá <span style='color:var(--gold2)'>Tetrarch</span> gratis" data-en="Try <span style='color:var(--gold2)'>Tetrarch</span> for free">Probá <span style="color:var(--gold2)">Tetrarch</span> gratis</h1>
+<p data-es="Recibí al instante tu clave: usá Tetrarch <b>sin límite en cuentas demo</b> y <b>14 días en una cuenta real</b>. Es el mismo bot que corre en nuestra cuenta real." data-en="Get your key instantly: run Tetrarch <b>with no time limit on demo accounts</b> and <b>for 14 days on one live account</b>. The same bot that runs on our live account.">Recibí al instante tu clave: usá Tetrarch <b>sin límite en cuentas demo</b> y <b>14 días en una cuenta real</b>. Es el mismo bot que corre en nuestra cuenta real.</p>
 </section>
 <div class="grid2">
 <section class="panel" id="form-panel">
@@ -76,12 +76,12 @@ ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#d8cdb4;font-size:14px}
 <div class="msg" id="msg" role="status"></div>
 </form>
 <div id="done" style="display:none">
-<p class="muted" data-es="Tu clave de prueba (hasta 2 cuentas, demo o real):" data-en="Your trial key (up to 2 accounts, demo or live):">Tu clave de prueba (hasta 2 cuentas, demo o real):</p>
+<p class="muted" data-es="Tu clave (demo sin límite · 1 cuenta real por 14 días):" data-en="Your key (unlimited demo · 1 live account for 14 days):">Tu clave (demo sin límite · 1 cuenta real por 14 días):</p>
 <div class="keybox"><span class="key" id="key"></span><button class="btn secondary" type="button" id="copy" data-es="Copiar" data-en="Copy">Copiar</button></div>
 <p class="muted" style="font-size:13px" id="exp"></p>
 <a class="btn" href="/descargas/Tetrarch_Instalador.exe" data-cta="trial-download" download data-es="Descargar instalador (Windows)" data-en="Download installer (Windows)">Descargar instalador (Windows)</a>
 </div>
-<p class="note" data-es="Una prueba por persona, por equipo y por cuenta MT5." data-en="One trial per person, per computer and per MT5 account.">Una prueba por persona, por equipo y por cuenta MT5.</p>
+<p class="note" data-es="Demo sin límite. La prueba en cuenta real es una sola por persona: los 14 días empiezan cuando la activás en real." data-en="Unlimited on demo. The live-account trial is once per person: the 14 days start when you first run it live.">Demo sin límite. La prueba en cuenta real es una sola por persona: los 14 días empiezan cuando la activás en real.</p>
 </section>
 <section class="panel">
 <h2 data-es="Cómo instalarlo" data-en="How to install">Cómo instalarlo</h2>
@@ -106,15 +106,15 @@ ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#d8cdb4;font-size:14px}
 const API='https://tetrarch-licencias.tetrarch.workers.dev/v1/trial';
 const TURNSTILE_SITEKEY=''; // opcional: pegar la "site key" de Cloudflare Turnstile
 const langButtons=[...document.querySelectorAll('[data-lang]')];
-let lastExp=0;
+let lastExp=0,shown=false;
 function currentLang(){return document.documentElement.lang==='es'?'es':'en'}
 function setLang(lang){document.documentElement.lang=lang;langButtons.forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));document.querySelectorAll('[data-es][data-en]').forEach(el=>{const v=el.dataset[lang];if(v!==undefined)el.innerHTML=v});renderExp()}
 langButtons.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-const T={es:{EMAIL:'Revisá el email.',USED:'Ya se generó una prueba con este email. Revisá tu correo o escribinos.',LIMIT:'Demasiados pedidos desde esta conexión. Probá mañana.',CAPTCHA:'No pudimos verificar que no seas un robot. Reintentá.',ERR:'No se pudo generar la clave. Reintentá en unos minutos.',wait:'Generando…',exp:'Válida hasta el ',mail:' · También te la enviamos por email.',copied:'Copiada'},
-en:{EMAIL:'Please check your email.',USED:'A trial was already created for this email. Check your inbox or contact us.',LIMIT:'Too many requests from this connection. Try tomorrow.',CAPTCHA:'Verification failed. Please retry.',ERR:'Could not create the key. Please retry in a few minutes.',wait:'Creating…',exp:'Valid until ',mail:' · We also emailed it to you.',copied:'Copied'}};
+const T={es:{EMAIL:'Revisá el email.',USED:'Ya se generó una prueba con este email. Revisá tu correo o escribinos.',LIMIT:'Demasiados pedidos desde esta conexión. Probá mañana.',CAPTCHA:'No pudimos verificar que no seas un robot. Reintentá.',ERR:'No se pudo generar la clave. Reintentá en unos minutos.',wait:'Generando…',exp:'Demo: sin vencimiento. Real: 14 días desde que la activás.',mail:' · También te la enviamos por email.',copied:'Copiada'},
+en:{EMAIL:'Please check your email.',USED:'A trial was already created for this email. Check your inbox or contact us.',LIMIT:'Too many requests from this connection. Try tomorrow.',CAPTCHA:'Verification failed. Please retry.',ERR:'Could not create the key. Please retry in a few minutes.',wait:'Creating…',exp:'Demo: no expiry. Live: 14 days from first use.',mail:' · We also emailed it to you.',copied:'Copied'}};
 const tr=k=>T[currentLang()][k];
 let mailed=false;
-function renderExp(){if(!lastExp)return;document.getElementById('exp').textContent=tr('exp')+new Date(lastExp*1000).toLocaleDateString(currentLang()==='es'?'es-AR':'en-US')+(mailed?tr('mail'):'')}
+function renderExp(){if(!shown)return;document.getElementById('exp').textContent=tr('exp')+(mailed?tr('mail'):'')}
 if(TURNSTILE_SITEKEY){const s=document.createElement('script');s.src='https://challenges.cloudflare.com/turnstile/v0/api.js';s.async=true;document.head.appendChild(s);document.getElementById('ts-box').innerHTML='<div class="cf-turnstile" data-sitekey="'+TURNSTILE_SITEKEY+'" data-theme="dark"></div>'}
 const qs=new URLSearchParams(location.search);
 const src=[qs.get('utm_source'),qs.get('utm_medium'),qs.get('utm_campaign')].filter(Boolean).join('/')||document.referrer.slice(0,100);
@@ -132,7 +132,7 @@ document.getElementById('trial-form').addEventListener('submit',async e=>{
     if(!d.ok){msg.className='msg err';msg.textContent=tr(d.error)||tr('ERR');btn.disabled=false;btn.textContent=old;if(window.turnstile)turnstile.reset();return}
     if(window.gtag)gtag('event','trial_key_created',{source:src});
     document.getElementById('trial-form').style.display='none';document.getElementById('done').style.display='block';
-    document.getElementById('key').textContent=d.key;lastExp=d.expires_at;mailed=!!d.mailed;renderExp();
+    document.getElementById('key').textContent=d.key;lastExp=d.expires_at;mailed=!!d.mailed;shown=true;renderExp();
   }catch(err){msg.className='msg err';msg.textContent=tr('ERR');btn.disabled=false;btn.textContent=old}
 });
 document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.getElementById('key').textContent);const b=document.getElementById('copy');b.textContent=tr('copied')}catch(e){}});
