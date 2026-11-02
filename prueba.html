@@ -75,6 +75,7 @@ ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#d8cdb4;font-size:14px}
 <button class="btn" type="submit" id="submit" style="width:100%;margin-top:6px" data-es="Obtener clave de prueba" data-en="Get trial key">Obtener clave de prueba</button>
 <div class="msg" id="msg" role="status"></div>
 </form>
+<div id="sent" style="display:none"><h3 style="color:var(--gold2);margin:6px 0" data-es="¡Listo! Revisá tu correo" data-en="Done! Check your inbox">¡Listo! Revisá tu correo</h3><p class="muted" id="sent-msg"></p><a class="btn" href="/descargas/Tetrarch_Instalador.exe" data-cta="trial-download-mail" download data-es="Descargar instalador (Windows)" data-en="Download installer (Windows)">Descargar instalador (Windows)</a></div>
 <div id="done" style="display:none">
 <p class="muted" data-es="Tu clave (demo sin límite · 1 cuenta real por 14 días):" data-en="Your key (unlimited demo · 1 live account for 14 days):">Tu clave (demo sin límite · 1 cuenta real por 14 días):</p>
 <div class="keybox"><span class="key" id="key"></span><button class="btn secondary" type="button" id="copy" data-es="Copiar" data-en="Copy">Copiar</button></div>
@@ -106,12 +107,13 @@ ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#d8cdb4;font-size:14px}
 const API='https://tetrarch-licencias.tetrarch.workers.dev/v1/trial';
 const TURNSTILE_SITEKEY=''; // opcional: pegar la "site key" de Cloudflare Turnstile
 const langButtons=[...document.querySelectorAll('[data-lang]')];
-let lastExp=0,shown=false;
+let lastExp=0,shown=false,sentTo='';
+function renderSent(){if(!sentTo)return;document.getElementById('sent-msg').textContent=tr('sent').replace('{e}',sentTo)}
 function currentLang(){return document.documentElement.lang==='es'?'es':'en'}
-function setLang(lang){document.documentElement.lang=lang;langButtons.forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));document.querySelectorAll('[data-es][data-en]').forEach(el=>{const v=el.dataset[lang];if(v!==undefined)el.innerHTML=v});renderExp()}
+function setLang(lang){document.documentElement.lang=lang;langButtons.forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));document.querySelectorAll('[data-es][data-en]').forEach(el=>{const v=el.dataset[lang];if(v!==undefined)el.innerHTML=v});renderExp();renderSent()}
 langButtons.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-const T={es:{EMAIL:'Revisá el email.',USED:'Ya se generó una prueba con este email. Revisá tu correo o escribinos.',LIMIT:'Demasiados pedidos desde esta conexión. Probá mañana.',CAPTCHA:'No pudimos verificar que no seas un robot. Reintentá.',ERR:'No se pudo generar la clave. Reintentá en unos minutos.',wait:'Generando…',exp:'Demo: sin vencimiento. Real: 14 días desde que la activás.',mail:' · También te la enviamos por email.',copied:'Copiada'},
-en:{EMAIL:'Please check your email.',USED:'A trial was already created for this email. Check your inbox or contact us.',LIMIT:'Too many requests from this connection. Try tomorrow.',CAPTCHA:'Verification failed. Please retry.',ERR:'Could not create the key. Please retry in a few minutes.',wait:'Creating…',exp:'Demo: no expiry. Live: 14 days from first use.',mail:' · We also emailed it to you.',copied:'Copied'}};
+const T={es:{EMAIL:'Revisá el email.',USED:'Ya se generó una prueba con este email. Revisá tu correo o escribinos.',LIMIT:'Demasiados pedidos desde esta conexión. Probá mañana.',CAPTCHA:'No pudimos verificar que no seas un robot. Reintentá.',ERR:'No se pudo generar la clave. Reintentá en unos minutos.',wait:'Generando…',exp:'Demo: sin vencimiento. Real: 14 días desde que la activás.',mail:' · También te la enviamos por email.',copied:'Copiada',sent:'Te enviamos la clave a {e}. Si no la ves en unos minutos, revisá la carpeta de spam o promociones.'},
+en:{EMAIL:'Please check your email.',USED:'A trial was already created for this email. Check your inbox or contact us.',LIMIT:'Too many requests from this connection. Try tomorrow.',CAPTCHA:'Verification failed. Please retry.',ERR:'Could not create the key. Please retry in a few minutes.',wait:'Creating…',exp:'Demo: no expiry. Live: 14 days from first use.',mail:' · We also emailed it to you.',copied:'Copied',sent:'We sent your key to {e}. If you do not see it in a few minutes, check your spam or promotions folder.'}};
 const tr=k=>T[currentLang()][k];
 let mailed=false;
 function renderExp(){if(!shown)return;document.getElementById('exp').textContent=tr('exp')+(mailed?tr('mail'):'')}
@@ -131,7 +133,9 @@ document.getElementById('trial-form').addEventListener('submit',async e=>{
     const d=await r.json().catch(()=>({}));
     if(!d.ok){msg.className='msg err';msg.textContent=tr(d.error)||tr('ERR');btn.disabled=false;btn.textContent=old;if(window.turnstile)turnstile.reset();return}
     if(window.gtag)gtag('event','trial_key_created',{source:src});
-    document.getElementById('trial-form').style.display='none';document.getElementById('done').style.display='block';
+    document.getElementById('trial-form').style.display='none';
+    if(d.mailed&&!d.key){sentTo=email;document.getElementById('sent').style.display='block';renderSent();return}
+    document.getElementById('done').style.display='block';
     document.getElementById('key').textContent=d.key;lastExp=d.expires_at;mailed=!!d.mailed;shown=true;renderExp();
   }catch(err){msg.className='msg err';msg.textContent=tr('ERR');btn.disabled=false;btn.textContent=old}
 });
