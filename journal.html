@@ -58,7 +58,7 @@ ul.ticks{list-style:none;padding:0;margin:0;columns:2;column-gap:28px}ul.ticks l
 <h1>Tu diario de trading, <span style="color:var(--gold2)">automático</span></h1>
 <p class="lead">Pegá el reporte de MetaTrader 5 y todas tus operaciones se cargan solas. Dashboard profesional, curva de capital y análisis por activo, día y hora. Sin macros, sin instalar nada.</p>
 <div class="price"><b id="precio">USD 24</b><span>pago único · acceso para siempre</span></div>
-<a class="btn big cta" href="#comprar" data-cta="journal-hero">Quiero mi Trading Journal</a>
+<a class="btn big cta" href="https://pay.hotmart.com/F108324975K" target="_blank" rel="noopener" data-cta="journal-hero">Quiero mi Trading Journal</a>
 </div>
 <div><img src="/img/journal/portada.webp" alt="Trading Journal Pro" width="900" height="900"></div>
 </section>
@@ -128,7 +128,7 @@ ul.ticks{list-style:none;padding:0;margin:0;columns:2;column-gap:28px}ul.ticks l
 </main>
 <footer class="footer"><div class="wrap footer-row"><a href="/">TETRARCH · Volver al sitio</a><span>Soporte: tetrarchbot@gmail.com</span></div></footer>
 <script>
-const PAY_URL=''; // link de pago de Hotmart del journal
+const PAY_URL='https://pay.hotmart.com/F108324975K'; // link de pago de Hotmart del journal
 const buy=document.getElementById('buy');
 if(PAY_URL){buy.href=PAY_URL;if(window.__affFix)window.__affFix()}else{buy.textContent='Disponible muy pronto';buy.removeAttribute('target');buy.style.opacity=.6;buy.addEventListener('click',e=>e.preventDefault())}
 document.querySelectorAll('[data-cta]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','cta_click',{cta:a.dataset.cta})}));
