@@ -91,8 +91,9 @@ ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#d8cdb4;font-size:14px}
 <div class="pct" id="r-pct"></div>
 <p class="muted" id="r-text" style="margin:10px 0 16px"></p>
 <div class="keybox"><span class="coupon" id="r-coupon"></span><button class="btn secondary" type="button" id="copy">Copiar</button></div>
-<p class="note">También te lo enviamos por email. El cupón se aplica en el checkout.</p>
-<a class="btn" id="r-link" href="#" style="margin-top:10px" target="_blank" rel="noopener">Comprar con descuento</a>
+<p class="note">Cupón personal de <b>un solo uso</b>, válido por 7 días. También te lo enviamos por email.</p>
+<ol class="steps" style="margin:12px 0"><li>Tocá <b>Copiar</b>.</li><li>Abrí el checkout con el botón de abajo.</li><li>Tocá <b>«Tengo un cupón»</b>, pegalo y aplicalo.</li></ol>
+<a class="btn" id="r-link" href="#" style="margin-top:6px" target="_blank" rel="noopener">Ir al checkout</a>
 </div>
 </section>
 <section class="panel">
@@ -102,6 +103,7 @@ ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#d8cdb4;font-size:14px}
 <li>Ingresás el código en esta página.</li>
 <li>Si ya compraste Tetrarch, recibís un cupón de <b>40% OFF</b> para una segunda licencia.</li>
 <li>Si todavía no compraste, recibís un cupón de bienvenida de <b>10% OFF</b>.</li>
+<li>Cada cupón es personal y de un solo uso: lo pegás en el checkout de Hotmart.</li>
 </ol>
 <p class="muted" style="font-size:14px">¿Querés probar antes de comprar? Hay <a href="/prueba.html" style="color:var(--gold2);text-decoration:underline">prueba gratis</a>: demo sin límite y 14 días en cuenta real.</p>
 <p class="note">Operar CFD con apalancamiento implica alto riesgo y puede causar la pérdida de todo el capital. Los resultados pasados, reales o simulados, no garantizan resultados futuros.</p>
@@ -111,7 +113,7 @@ ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#d8cdb4;font-size:14px}
 <footer class="footer"><div class="wrap footer-row"><a href="/">TETRARCH · Volver al sitio</a><span>Soporte: tetrarchbot@gmail.com</span></div></footer>
 <script>
 const API='https://tetrarch-licencias.tetrarch.workers.dev/v1/promo/';
-const E={EMAIL:'Revisá el email.',WAIT:'Esperá un minuto antes de pedir otro código.',LIMIT:'Demasiados pedidos desde esta conexión. Probá más tarde.',MAIL:'No pudimos enviar el email. Reintentá en unos minutos.',CODE:'Código incorrecto.',EXPIRED:'El código venció o se agotaron los intentos. Pedí uno nuevo.',ERR:'Ocurrió un error. Reintentá.'};
+const E={EMAIL:'Revisá el email.',WAIT:'Esperá un minuto antes de pedir otro código.',LIMIT:'Demasiados pedidos desde esta conexión. Probá más tarde.',MAIL:'No pudimos enviar el email. Reintentá en unos minutos.',CODE:'Código incorrecto.',EXPIRED:'El código venció o se agotaron los intentos. Pedí uno nuevo.',ERR:'Ocurrió un error. Reintentá.',COUPON:'No pudimos generar tu cupón en este momento. Reintentá en unos minutos o escribinos a tetrarchbot@gmail.com.'};
 const $=id=>document.getElementById(id);
 const qs=new URLSearchParams(location.search);
 const src=[qs.get('utm_source'),qs.get('utm_medium'),qs.get('utm_campaign')].filter(Boolean).join('/')||document.referrer.slice(0,100);
