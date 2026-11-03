@@ -51,6 +51,18 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 @media(max-width:850px){.navbuy{display:none}}
 @media(max-width:520px){.grid4{grid-template-columns:1fr}}
 </style>
+<style>
+.power{padding:30px 0 10px}.pbox{background:linear-gradient(145deg,#1b150a,#0c0a06);border:1px solid #c9a55a;border-radius:18px;padding:30px;box-shadow:0 0 50px rgba(232,189,96,.12)}
+.pbox .ptag{font-size:11px;letter-spacing:.24em;color:var(--gold);font-weight:800;text-transform:uppercase}
+.pbig{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:14px 0 6px}.pbig .from{font-size:22px;color:var(--muted)}.pbig .arrow{color:var(--gold);font-size:22px}
+.pbig .to{font-size:clamp(40px,7vw,72px);font-weight:900;letter-spacing:-.03em;color:var(--gold2);line-height:1}
+.pstats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}.pstats div{background:#0c0b08;border:1px solid #392d18;border-radius:10px;padding:14px}
+.pstats b{display:block;font-size:24px;color:var(--gold2)}.pstats span{font-size:12px;color:var(--muted)}
+.ladder{width:100%;border-collapse:collapse;margin-top:18px;font-size:14px}.ladder td{white-space:normal;padding:12px 10px;border-bottom:1px solid #332817;color:#d8cdb4}
+.ladder td.v{text-align:right;white-space:nowrap;font-weight:800;color:var(--gold2)}.ladder tr:first-child td{color:#fff}
+.pnote{font-size:12px;color:#9f9275;margin-top:12px}
+@media(max-width:700px){.pstats{grid-template-columns:1fr 1fr}.pbox{padding:20px}.ladder td:last-child{display:none}}
+</style>
 </head>
 <body>
 <header class="top"><div class="wrap nav">
@@ -69,6 +81,22 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 </div>
 <img src="/img/img03.webp" alt="Tetrarch EA – algorithmic gold trading">
 </section>
+<section class="blk" id="power" style="padding-top:0">
+<div class="pbox" style="margin:30px 0">
+<div class="ptag">Aggressive profile · Max compounding · Backtest Jan 2024 – Oct 2026</div>
+<div class="pbig"><span class="from">USD 10,000</span><span class="arrow">→</span><span class="to">USD 1,438,172</span></div>
+<p class="muted" style="margin:6px 0 0">The full power of Tetrarch, whenever you want it. You choose how hard to push.</p>
+<div class="pstats"><div><b>+14,282%</b><span>return</span></div><div><b>1.55</b><span>profit factor</span></div><div><b>1,532</b><span>trades, all with stop loss</span></div><div><b>39%</b><span>max drawdown</span></div></div>
+<table class="ladder">
+<tr><td><b>Aggressive</b> + max compounding</td><td class="v">+USD 1,428,172</td><td>Maximum potential. Drawdowns up to 39%.</td></tr>
+<tr><td><b>Standard</b> + max compounding</td><td class="v">+USD 319,340</td><td>Strong growth at base risk.</td></tr>
+<tr><td><b>Standard</b> + prudent compounding</td><td class="v">+USD 61,631</td><td>Reinvests and cuts risk when the account falls.</td></tr>
+<tr><td><b>Standard</b> no compounding</td><td class="v">+USD 39,485</td><td>Fixed risk on starting capital.</td></tr>
+</table>
+<p class="pnote">Same period (FundedNext, Jan 2024 – Oct 2026), same trades, USD 10,000 deposit: only position size changes. Conservative and Prop firm profiles risk even less. Real-tick backtests; simulated results do not guarantee future results.</p>
+</div>
+</section>
+
 
 <section class="blk" id="strategies">
 <div class="eyebrow">THE FOUR STRATEGIES</div>
@@ -94,7 +122,7 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 </section>
 
 <section class="blk" id="results">
-<div class="eyebrow">SIMULATED BACKTESTS</div>
+<div class="eyebrow">LONG-TERM SOLIDITY · SIMULATED BACKTESTS</div>
 <h2>7 years of gold, one configuration</h2>
 <p class="muted" style="margin:-4px 0 14px">Profit factor <b style="color:var(--gold2)">1.55 since 2024</b> · <b style="color:var(--gold2)">1.32 average over 7 years</b>, trends and ranges included.</p>
 <div class="table-wrap"><table class="bt"><thead><tr><th>Period (data)</th><th>Return</th><th>Profit factor</th><th>Max drawdown</th><th>Trades</th></tr></thead><tbody>
