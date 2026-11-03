@@ -130,7 +130,14 @@ ul.ticks{list-style:none;padding:0;margin:0;columns:2;column-gap:28px}ul.ticks l
 <script>
 const PAY_URL=''; // link de pago de Hotmart del journal
 const buy=document.getElementById('buy');
-if(PAY_URL){buy.href=PAY_URL}else{buy.textContent='Disponible muy pronto';buy.removeAttribute('target');buy.style.opacity=.6;buy.addEventListener('click',e=>e.preventDefault())}
+if(PAY_URL){buy.href=PAY_URL;if(window.__affFix)window.__affFix()}else{buy.textContent='Disponible muy pronto';buy.removeAttribute('target');buy.style.opacity=.6;buy.addEventListener('click',e=>e.preventDefault())}
 document.querySelectorAll('[data-cta]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','cta_click',{cta:a.dataset.cta})}));
+</script>
+<script>
+/* Afiliados Hotmart: pasa los parametros de la URL (ap, src, sck, utm_*, etc.) a los links del checkout */
+(function(){try{var q=new URLSearchParams(location.search);if(![...q.keys()].length)return;
+function fix(a){try{var u=new URL(a.href);if(u.hostname.indexOf('hotmart.com')<0)return;q.forEach(function(v,k){if(!u.searchParams.has(k))u.searchParams.set(k,v)});a.href=u.toString()}catch(e){}}
+function run(){document.querySelectorAll('a[href*="hotmart.com"]').forEach(fix)}
+run();window.addEventListener('load',run);window.__affFix=run;}catch(e){}})();
 </script>
 </body></html>

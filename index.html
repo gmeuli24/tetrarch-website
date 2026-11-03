@@ -76,4 +76,11 @@ const buttons=[...document.querySelectorAll('[data-lang]')];function setLang(lan
     window.addEventListener('scroll', toggle, { passive: true });
     toggle();
   })();
-</script></body></html>
+</script><script>
+/* Afiliados Hotmart: pasa los parametros de la URL (ap, src, sck, utm_*, etc.) a los links del checkout */
+(function(){try{var q=new URLSearchParams(location.search);if(![...q.keys()].length)return;
+function fix(a){try{var u=new URL(a.href);if(u.hostname.indexOf('hotmart.com')<0)return;q.forEach(function(v,k){if(!u.searchParams.has(k))u.searchParams.set(k,v)});a.href=u.toString()}catch(e){}}
+function run(){document.querySelectorAll('a[href*="hotmart.com"]').forEach(fix)}
+run();window.addEventListener('load',run);window.__affFix=run;}catch(e){}})();
+</script>
+</body></html>

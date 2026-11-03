@@ -135,4 +135,11 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 </main>
 <footer class="footer"><div class="wrap footer-row"><span>TETRARCH EA · Contact: <a href="mailto:tetrarchbot@gmail.com" style="color:var(--gold2)">tetrarchbot@gmail.com</a></span><span>Payments processed securely by Hotmart</span></div></footer>
 <script>document.querySelectorAll('[data-cta]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','buy_click',{cta:a.dataset.cta})}));</script>
+<script>
+/* Afiliados Hotmart: pasa los parametros de la URL (ap, src, sck, utm_*, etc.) a los links del checkout */
+(function(){try{var q=new URLSearchParams(location.search);if(![...q.keys()].length)return;
+function fix(a){try{var u=new URL(a.href);if(u.hostname.indexOf('hotmart.com')<0)return;q.forEach(function(v,k){if(!u.searchParams.has(k))u.searchParams.set(k,v)});a.href=u.toString()}catch(e){}}
+function run(){document.querySelectorAll('a[href*="hotmart.com"]').forEach(fix)}
+run();window.addEventListener('load',run);window.__affFix=run;}catch(e){}})();
+</script>
 </body></html>
