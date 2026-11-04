@@ -9,10 +9,10 @@
     "daily": 0.88,
     "demo": false,
     "drawdown": 3.33,
-    "equity": 11175.56,
+    "equity": 11373.62,
     "firstTradeDate": "10/25/2026 00:00",
     "gain": 9.12,
-    "lastUpdateDate": "11/04/2026 06:26",
+    "lastUpdateDate": "11/04/2026 13:03",
     "monthly": 9.12,
     "name": "Tetrarch",
     "pips": 23947,
@@ -20,5 +20,5 @@
     "profitFactor": 2.04,
     "server": "Vantage Markets"
   },
-  "syncedAt": "2026-11-04T12:06:09.459867+00:00"
+  "syncedAt": "2026-11-04T19:43:38.146275+00:00"
 }
