@@ -36,7 +36,7 @@ main{padding:68px 0 90px}.eyebrow{font-size:11px;letter-spacing:.28em;text-trans
 .hero h1{font-size:clamp(36px,5vw,60px);line-height:1.04;letter-spacing:-.035em;margin:14px 0}
 .hero p.lead{color:var(--muted);font-size:18px;margin:0 0 24px}
 .hero img{width:100%;border-radius:16px;border:1px solid var(--line);display:block}
-.price{display:flex;align-items:baseline;gap:12px;margin:0 0 16px}.price b{font-size:40px;color:var(--gold2)}.price span{color:var(--muted);font-size:14px}
+.price{display:flex;align-items:baseline;gap:12px;margin:0 0 16px}.price b{font-size:40px;color:var(--gold2);white-space:nowrap}.price span{color:var(--muted);font-size:14px}
 .btn.big{padding:16px 28px;font-size:16px}
 .ticks{list-style:none;padding:0;margin:18px 0 0;color:#d8cdb4;font-size:14px;display:grid;gap:6px}.ticks li::before{content:'✔ ';color:var(--gold)}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -67,9 +67,9 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 <body>
 <header class="top"><div class="wrap nav">
 <a class="brand" href="#"><img class="mark" src="/favicon.png?v=2" alt=""><span>TETRARCH</span></a>
-<nav class="links"><a class="navlink" href="#strategies">Strategies</a><a class="navlink" href="#results">Backtests</a><a class="navlink" href="#faq">FAQ</a><a class="btn navbuy" href="https://pay.hotmart.com/F108310139U?checkoutMode=10" data-checkout="1" data-cta="buy-nav">Buy now</a></nav>
+<nav class="links"><a class="navlink" href="#strategies" data-es="Estrategias" data-en="Strategies">Strategies</a><a class="navlink" href="#results" data-es="Backtests" data-en="Backtests">Backtests</a><a class="navlink" href="#faq" data-es="Preguntas" data-en="FAQ">FAQ</a><div class="lang"><button data-lang="es">ES</button><button data-lang="en">EN</button></div><a class="btn navbuy" href="https://pay.hotmart.com/F108310139U?checkoutMode=10" data-checkout="1" data-cta="buy-nav" data-es="Comprar" data-en="Buy now">Buy now</a></nav>
 </div></header>
-<main class="wrap" style="padding:0">
+<main class="wrap" style="padding:0" data-langblk="en">
 <section class="hero">
 <div>
 <div class="eyebrow">AUTOMATED GOLD TRADING · METATRADER 5</div>
@@ -81,7 +81,7 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 </div>
 <img src="/img/img03.webp" alt="Tetrarch EA – algorithmic gold trading">
 </section>
-<section class="blk" id="power" style="padding-top:0">
+<section class="blk" data-id="power" style="padding-top:0">
 <div class="pbox" style="margin:30px 0">
 <div class="ptag">Aggressive profile · Max compounding · Backtest Jan 2024 – Oct 2026</div>
 <div class="pbig"><span class="from">USD 10,000</span><span class="arrow">→</span><span class="to">USD 1,184,900</span></div>
@@ -93,7 +93,7 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 </section>
 
 
-<section class="blk" id="strategies">
+<section class="blk" data-id="strategies">
 <div class="eyebrow">THE FOUR STRATEGIES</div>
 <h2>Each one wins in a different market phase</h2>
 <div class="grid4">
@@ -116,7 +116,7 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 <img class="imgfull" src="/img/perfiles-en.webp" alt="Tetrarch risk profiles">
 </section>
 
-<section class="blk" id="results">
+<section class="blk" data-id="results">
 <div class="eyebrow">LONG-TERM SOLIDITY · SIMULATED BACKTESTS</div>
 <h2>7 years of gold, one configuration</h2>
 <p class="muted" style="margin:-4px 0 14px">Profit factor <b style="color:var(--gold2)">1.55 since 2024</b> · <b style="color:var(--gold2)">1.32 average over 7 years</b>, trends and ranges included.</p>
@@ -140,7 +140,7 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 <ul class="ticks"><li>MetaTrader 5 on Windows (or a Windows VPS) and a hedging account with XAUUSD</li><li>Recommended capital: from $5,000 on a standard account, or from about $100 on a cent account</li><li>Low gold spread and a VPS so the robot runs Monday to Friday without interruption</li></ul>
 </section>
 
-<section class="blk" id="faq">
+<section class="blk" data-id="faq">
 <div class="eyebrow">FAQ</div>
 <h2>Questions</h2>
 <details><summary>How do I receive my license?</summary><p>Right after the payment is approved you get an email with your license key. Download the installer, run it and paste the key.</p></details>
@@ -158,7 +158,96 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 <div class="risk"><b>Risk warning.</b> Trading leveraged CFDs carries a high level of risk and may result in the loss of all your capital. Past results, live or simulated, do not guarantee future results. Tetrarch EA is an automation tool and does not constitute financial advice. Contact: <a href="mailto:tetrarchbot@gmail.com" style="color:var(--gold2)">tetrarchbot@gmail.com</a></div>
 </section>
 </main>
-<footer class="footer"><div class="wrap footer-row"><span>TETRARCH EA · Contact: <a href="mailto:tetrarchbot@gmail.com" style="color:var(--gold2)">tetrarchbot@gmail.com</a></span><span>Payments processed securely by Hotmart</span></div></footer>
+<main class="wrap" style="padding:0" data-langblk="es" hidden>
+<section class="hero">
+<div>
+<div class="eyebrow">TRADING AUTOMÁTICO DE ORO · METATRADER 5</div>
+<h1>Un robot. <span style="color:var(--gold2)">Cuatro estrategias.</span> Un gestor de riesgo.</h1>
+<p class="lead">Tetrarch EA opera oro (XAUUSD) de forma automática en MetaTrader 5. El oro algunos días tiene tendencia, otros se queda en rango y muchas veces se define con la apertura europea: Tetrarch hace funcionar cuatro estrategias independientes para no depender de una sola fase del mercado.</p>
+<div class="price"><b>USD 189</b><span>pago único · garantía de reembolso de 7 días</span></div>
+<a class="btn big" href="https://pay.hotmart.com/F108310139U?checkoutMode=10" data-checkout="1" data-cta="buy-hero">Comprar Tetrarch EA →</a>
+<ul class="ticks"><li>Stop loss en cada operación</li><li>Sin martingala, sin grid, sin promediar en contra</li><li>Clave de licencia por email al instante después del pago</li></ul>
+</div>
+<img src="/img/img02.webp" alt="Tetrarch EA – trading algorítmico de oro">
+</section>
+<section class="blk" data-id="power" style="padding-top:0">
+<div class="pbox" style="margin:30px 0">
+<div class="ptag">Perfil Arriesgado · Compuesto máximo · Backtest ene 2024 – oct 2026</div>
+<div class="pbig"><span class="from">10.000 USD</span><span class="arrow">→</span><span class="to">1.184.900 USD</span></div>
+<p class="muted" style="margin:6px 0 0">Toda la potencia de Tetrarch, cuando la quieras usar. Elegís cuánto acelerar.</p>
+<div class="pstats"><div><b>+11.749%</b><span>resultado</span></div><div><b>20,2%</b><span>caída máxima del capital</span></div><div><b>4</b><span>motores de trading</span></div><div><b>100%</b><span>operaciones con stop</span></div></div>
+<table class="ladder"><tr><td><b>Perfil y modo</b></td><td class="v">Ganancia</td><td class="v">Caída máx.</td></tr><tr><td><b>Arriesgado</b> + compuesto máximo</td><td class="v">+11.749%</td><td class="v" style="color:#d8cdb4">20,2%</td></tr><tr><td><b>Estándar</b> + compuesto máximo</td><td class="v">+3.193%</td><td class="v" style="color:#d8cdb4">15,3%</td></tr><tr><td><b>Conservador</b> + compuesto máximo</td><td class="v">+1.368%</td><td class="v" style="color:#d8cdb4">11,8%</td></tr><tr><td><b>Estándar</b> + compuesto prudente</td><td class="v">+616%</td><td class="v" style="color:#d8cdb4">11,4%</td></tr><tr><td><b>Arriesgado</b> sin compuesto</td><td class="v">+580%</td><td class="v" style="color:#d8cdb4">12,7%</td></tr><tr><td><b>Estándar</b> sin compuesto</td><td class="v">+399%</td><td class="v" style="color:#d8cdb4">10,4%</td></tr><tr><td><b>Conservador</b> sin compuesto</td><td class="v">+298%</td><td class="v" style="color:#d8cdb4">10,3%</td></tr></table>
+<p class="pnote">Mismo período (FundedNext, ene 2024 – oct 2026, años de tendencia), mismas operaciones, depósito de 10.000 USD: cambia solo el tamaño de las posiciones. En años de rango (Vantage 2020 – ago 2024) el compuesto máximo duplica o triplica las caídas: el Arriesgado llegó a caer 63,7%. A largo plazo: profit factor 1,32 en casi 7 años (Estándar). Backtests con ticks reales; resultados simulados que no garantizan resultados futuros.</p>
+</div>
+</section>
+
+
+<section class="blk" data-id="strategies">
+<div class="eyebrow">LAS CUATRO ESTRATEGIAS</div>
+<h2>Cada una gana en una fase distinta del mercado</h2>
+<div class="grid4">
+<div class="card"><h3>Momentum</h3><p>Captura movimientos rápidos dentro del día. Al llegar a 3 veces el riesgo asegura la ganancia y deja correr el resto con un stop que sigue al precio.</p></div>
+<div class="card"><h3>Ruptura de varios días</h3><p>Entra cuando el oro rompe el máximo o el mínimo de los últimos días, apunta hasta 5 veces el riesgo y cierra antes del fin de semana.</p></div>
+<div class="card"><h3>Retroceso</h3><p>Espera un cambio de estructura confirmado y entra en el retroceso, en vez de perseguir el precio.</p></div>
+<div class="card"><h3>Sesión</h3><p>Sigue la dirección que el oro suele tomar con la apertura europea. Como máximo una operación por día.</p></div>
+</div>
+</section>
+
+<section class="blk">
+<div class="eyebrow">GESTIÓN DEL RIESGO</div>
+<h2>Hecho para seguir en el juego</h2>
+<div class="grid3">
+<div class="card"><h3>Stop loss siempre</h3><p>Ninguna posición se abre sin stop. El lote se calcula según tu saldo y la distancia al stop.</p></div>
+<div class="card"><h3>Límite de pérdida diaria</h3><p>Cuando la pérdida del día más el riesgo abierto llegan al límite, no abre operaciones nuevas hasta el día siguiente.</p></div>
+<div class="card"><h3>Dos decisiones simples</h3><p>Elegís un perfil de riesgo (Arriesgado, Estándar, Conservador o Fondeo) y si querés interés compuesto. Todo lo demás viene configurado.</p></div>
+</div>
+<img class="imgfull" src="/img/img04.webp" alt="Gestión del riesgo de Tetrarch">
+<img class="imgfull" src="/img/perfiles-es.webp" alt="Perfiles de riesgo de Tetrarch">
+</section>
+
+<section class="blk" data-id="results">
+<div class="eyebrow">SOLIDEZ A LARGO PLAZO · BACKTESTS SIMULADOS</div>
+<h2>7 años de oro, una misma configuración</h2>
+<p class="muted" style="margin:-4px 0 14px">Profit factor <b style="color:var(--gold2)">1,55 desde 2024</b> · <b style="color:var(--gold2)">1,32 de promedio en 7 años</b>, con tendencias y rangos.</p>
+<div class="table-wrap"><table class="bt"><thead><tr><th>Período</th><th>Resultado</th><th>Profit factor</th><th>Caída máx.</th><th>Operaciones</th></tr></thead><tbody>
+<tr><td><b>Ene 2020 – nov 2026 · total, casi 7 años</b></td><td><b>+70.442 USD</b></td><td><b>1,32</b></td><td><b>20,2%</b></td><td><b>3.808</b></td></tr>
+<tr><td>Ene 2024 – nov 2026</td><td>+517%</td><td>1,55</td><td>8,0%</td><td>1.644</td></tr>
+<tr><td>Ene 2020 – dic 2023</td><td>+188%</td><td>1,15</td><td>20,2%</td><td>2.164</td></tr>
+</tbody></table></div>
+<p class="note">Probador de MetaTrader 5, cada tick basado en ticks reales, spread y comisión reales (Vantage), perfil Estándar, sin interés compuesto, depósito de 10.000 USD por período. Los resultados simulados no garantizan resultados futuros. Tetrarch también opera en una cuenta real con seguimiento público en Myfxbook (usuario: Tetrarch), incluidas las semanas perdedoras.</p>
+</section>
+
+<section class="blk">
+<div class="eyebrow">QUÉ RECIBÍS</div>
+<h2>Todo lo que necesitás para empezar</h2>
+<div class="grid3">
+<div class="card"><h3>Instalador para Windows</h3><p>Instala Tetrarch en todos los MetaTrader 5 de tu computadora y te copia la dirección del servidor de licencias.</p></div>
+<div class="card"><h3>Licencia personal</h3><p>Llega por email apenas se aprueba el pago. Válida para 1 cuenta real y cuentas demo sin límite.</p></div>
+<div class="card"><h3>Actualizaciones y soporte</h3><p>Actualizaciones gratuitas del robot y soporte por email. Incluye guía de instalación paso a paso en PDF.</p></div>
+</div>
+<h3 style="margin-top:28px">Requisitos</h3>
+<ul class="ticks"><li>MetaTrader 5 en Windows (o un VPS con Windows) y una cuenta de cobertura (hedging) con XAUUSD</li><li>Capital recomendado: desde 5.000 USD en cuenta estándar, o desde unos 100 USD en cuenta cent</li><li>Spread bajo en oro y un VPS para que el robot funcione de lunes a viernes sin interrupciones</li></ul>
+</section>
+
+<section class="blk" data-id="faq">
+<div class="eyebrow">PREGUNTAS FRECUENTES</div>
+<h2>Preguntas</h2>
+<details><summary>¿Cómo recibo mi licencia?</summary><p>Apenas se aprueba el pago te llega un email con tu clave. Descargás el instalador, lo ejecutás y pegás la clave.</p></details>
+<details><summary>¿En cuántas cuentas lo puedo usar?</summary><p>En una cuenta real y en todas las cuentas demo que quieras.</p></details>
+<details><summary>¿Funciona en Mac?</summary><p>MetaTrader 5 para Mac no ejecuta este tipo de robot de forma confiable. Usá un VPS con Windows.</p></details>
+<details><summary>¿Sirve para cuentas de fondeo?</summary><p>Sí, con el perfil Fondeo, pensado para límites de pérdida de 4 % diario y 8 % total o más amplios. Revisá siempre las reglas de tu empresa de fondeo.</p></details>
+<details><summary>¿Garantiza ganancias?</summary><p>No. Ningún sistema de trading puede garantizar ganancias. Hay semanas y meses con pérdidas.</p></details>
+<details><summary>¿Puedo pedir un reembolso?</summary><p>Sí, dentro de los 7 días de la compra a través de Hotmart. La licencia se desactiva cuando se procesa el reembolso.</p></details>
+</section>
+
+<section class="cta">
+<h2>¿Listo para automatizar tu trading de oro?</h2>
+<p class="muted">USD 189 pago único · garantía de reembolso de 7 días · licencia al instante por email</p>
+<a class="btn big" href="https://pay.hotmart.com/F108310139U?checkoutMode=10" data-checkout="1" data-cta="buy-bottom">Comprar Tetrarch EA →</a>
+<div class="risk"><b>Advertencia de riesgo.</b> Operar CFD con apalancamiento implica un alto riesgo y puede causar la pérdida de todo el capital. Los resultados pasados, reales o simulados, no garantizan resultados futuros. Tetrarch EA es una herramienta de automatización y no constituye asesoramiento financiero. Contacto: <a href="mailto:tetrarchbot@gmail.com" style="color:var(--gold2)">tetrarchbot@gmail.com</a></div>
+</section>
+</main>
+<footer class="footer"><div class="wrap footer-row"><span><span data-es="TETRARCH EA · Contacto:" data-en="TETRARCH EA · Contact:">TETRARCH EA · Contact:</span> <a href="mailto:tetrarchbot@gmail.com" style="color:var(--gold2)">tetrarchbot@gmail.com</a></span><span data-es="Pagos procesados de forma segura por Hotmart" data-en="Payments processed securely by Hotmart">Payments processed securely by Hotmart</span></div></footer>
 <script>document.querySelectorAll('[data-cta]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','buy_click',{cta:a.dataset.cta})}));</script>
 <script>
 /* Afiliados Hotmart: pasa los parametros de la URL (ap, src, sck, utm_*, etc.) a los links del checkout */
@@ -166,5 +255,22 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 function fix(a){try{var u=new URL(a.href);if(u.hostname.indexOf('hotmart.com')<0)return;q.forEach(function(v,k){if(!u.searchParams.has(k))u.searchParams.set(k,v)});a.href=u.toString()}catch(e){}}
 function run(){document.querySelectorAll('a[href*="hotmart.com"]').forEach(fix)}
 run();window.addEventListener('load',run);window.__affFix=run;}catch(e){}})();
+</script>
+<script>
+(function(){
+function setLang(l){
+ document.documentElement.lang=l;
+ document.querySelectorAll('[data-langblk]').forEach(function(m){m.hidden=(m.getAttribute('data-langblk')!==l);
+   m.querySelectorAll('[data-id]').forEach(function(e){e.id=(m.hidden?'':e.getAttribute('data-id'))})});
+ document.querySelectorAll('[data-es][data-en]').forEach(function(e){e.textContent=e.getAttribute('data-'+l)});
+ document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-lang')===l)});
+ document.title=l==='es'?'Tetrarch EA – Robot de trading para oro en MetaTrader 5':'Tetrarch EA – Gold Trading Robot for MetaTrader 5';
+ try{localStorage.setItem('tt_lang',l)}catch(e){}
+}
+var q=new URLSearchParams(location.search).get('lang'),st=null;try{st=localStorage.getItem('tt_lang')}catch(e){}
+var l=(q==='es'||q==='en')?q:(st||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en'));
+document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'))})});
+setLang(l);
+})();
 </script>
 </body></html>
