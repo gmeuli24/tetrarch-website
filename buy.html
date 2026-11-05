@@ -2,6 +2,13 @@
 <html lang="es">
 <head>
 <!-- Google tag (gtag.js) -->
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2971833053157662');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Tetrarch EA',currency:'USD',value:189});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.href;
+if(h.indexOf('pay.hotmart.com')>=0)fbq('track','InitiateCheckout',{content_name:h.indexOf('F108324975K')>=0?'Trading Journal Pro':'Tetrarch EA',currency:'USD',value:h.indexOf('F108324975K')>=0?24:189});
+else if(h.indexOf('meli.la')>=0||h.indexOf('mercadolibre')>=0)fbq('track','InitiateCheckout',{content_name:'Tetrarch EA (Mercado Libre)'});},true);</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2971833053157662&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WC7J133CE5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
