@@ -13,8 +13,21 @@
       "updatedAt": "2026-11-01T19:30:39.434641+00:00",
       "weekEnd": "2026-10-30",
       "weekStart": "2026-10-26"
+    },
+    {
+      "currency": "USC",
+      "netProfit": 123.89,
+      "periodLabel": "02/11/2026 – 06/11/2026",
+      "profitFactor": 1.16,
+      "returnPct": 1.14,
+      "startBalance": 10914.18,
+      "status": "published",
+      "tradeCount": 9,
+      "updatedAt": "2026-11-07T05:55:41.482862+00:00",
+      "weekEnd": "2026-11-06",
+      "weekStart": "2026-11-02"
     }
   ],
   "schemaVersion": 1,
-  "updatedAt": "2026-11-01T19:30:39.434650+00:00"
+  "updatedAt": "2026-11-07T05:55:41.482991+00:00"
 }
