@@ -6,6 +6,7 @@
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2971833053157662');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Tetrarch EA',currency:'USD',value:189});
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.href;
 if(h.indexOf('pay.hotmart.com')>=0)fbq('track','InitiateCheckout',{content_name:h.indexOf('F108324975K')>=0?'Trading Journal Pro':'Tetrarch EA',currency:'USD',value:h.indexOf('F108324975K')>=0?24:189});
+else if(h.indexOf('mql5.com')>=0)fbq('track','InitiateCheckout',{content_name:'Tetrarch EA (MQL5)'});
 else if(h.indexOf('meli.la')>=0||h.indexOf('mercadolibre')>=0)fbq('track','InitiateCheckout',{content_name:'Tetrarch EA (Mercado Libre)'});},true);</script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2971833053157662&ev=PageView&noscript=1"/></noscript>
 <!-- End Meta Pixel -->
@@ -45,6 +46,7 @@ main{padding:68px 0 90px}.eyebrow{font-size:11px;letter-spacing:.28em;text-trans
 .hero img{width:100%;border-radius:16px;border:1px solid var(--line);display:block}
 .price{display:flex;align-items:baseline;gap:12px;margin:0 0 16px}.price b{font-size:40px;color:var(--gold2);white-space:nowrap}.price span{color:var(--muted);font-size:14px}
 .meli{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:14px;font-size:15px;color:var(--text)}.meli span b{color:var(--gold2)}
+.mqb{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:10px;font-size:15px;color:var(--text)}
 .btn.mlb{background:#ffe600;border-color:#ffe600;color:#2d3277;padding:16px 26px;font-size:16px;white-space:nowrap;box-shadow:0 0 22px rgba(255,230,0,.25)}.btn.mlb:hover{filter:brightness(1.05)}
 .btn.big{padding:16px 28px;font-size:16px}
 .ticks{list-style:none;padding:0;margin:18px 0 0;color:#d8cdb4;font-size:14px;display:grid;gap:6px}.ticks li::before{content:'✔ ';color:var(--gold)}
@@ -87,6 +89,7 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 <div class="price"><b>$189</b><span>one-time payment · 7-day money-back guarantee</span></div>
 <a class="btn big" href="https://pay.hotmart.com/F108310139U?checkoutMode=10" data-checkout="1" data-cta="buy-hero">Buy Tetrarch EA →</a>
 <div class="meli"><span>🇦🇷 In Argentina? <b>Pay in fixed installments.</b></span><a class="btn mlb" href="https://meli.la/1qwvZKW" target="_blank" rel="noopener" data-cta="meli-hero">Pay in installments on Mercado Libre →</a></div>
+<div class="mqb"><span>Use the MetaTrader Market? <b style="color:var(--gold2)">Also on MQL5.</b></span><a class="btn secondary" href="https://www.mql5.com/en/market/product/203924?source=Site+Profile+Seller" target="_blank" rel="noopener" data-cta="mql5-hero">Buy on MQL5 →</a></div>
 <ul class="ticks"><li>Stop loss on every trade</li><li>No martingale, no grid, no averaging down</li><li>License key emailed instantly after payment</li></ul>
 </div>
 <img src="/img/img03.webp" alt="Tetrarch EA – algorithmic gold trading">
@@ -166,6 +169,7 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 <p class="muted">$189 one-time · 7-day money-back guarantee · instant license by email</p>
 <a class="btn big" href="https://pay.hotmart.com/F108310139U?checkoutMode=10" data-checkout="1" data-cta="buy-bottom">Buy Tetrarch EA →</a>
 <div class="meli"><span>🇦🇷 In Argentina? <b>Pay in fixed installments.</b></span><a class="btn mlb" href="https://meli.la/1qwvZKW" target="_blank" rel="noopener" data-cta="meli-bottom">Pay in installments on Mercado Libre →</a></div>
+<div class="mqb"><span>Use the MetaTrader Market? <b style="color:var(--gold2)">Also on MQL5.</b></span><a class="btn secondary" href="https://www.mql5.com/en/market/product/203924?source=Site+Profile+Seller" target="_blank" rel="noopener" data-cta="mql5-bottom">Buy on MQL5 →</a></div>
 <div class="risk"><b>Risk warning.</b> Trading leveraged CFDs carries a high level of risk and may result in the loss of all your capital. Past results, live or simulated, do not guarantee future results. Tetrarch EA is an automation tool and does not constitute financial advice. Contact: <a href="mailto:tetrarchbot@gmail.com" style="color:var(--gold2)">tetrarchbot@gmail.com</a></div>
 </section>
 </main>
@@ -178,6 +182,7 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 <div class="price"><b>USD 189</b><span>pago único · garantía de reembolso de 7 días</span></div>
 <a class="btn big" href="https://pay.hotmart.com/F108310139U?checkoutMode=10" data-checkout="1" data-cta="buy-hero">Comprar Tetrarch EA →</a>
 <div class="meli"><span>🇦🇷 ¿Estás en Argentina? <b>Pagá en cuotas fijas.</b></span><a class="btn mlb" href="https://meli.la/1qwvZKW" target="_blank" rel="noopener" data-cta="meli-hero">Pagar en cuotas con Mercado Libre →</a></div>
+<div class="mqb"><span>¿Usás el Market de MetaTrader? <b style="color:var(--gold2)">También está en MQL5.</b></span><a class="btn secondary" href="https://www.mql5.com/es/market/product/203924?source=Site+Profile+Seller" target="_blank" rel="noopener" data-cta="mql5-hero">Comprar en MQL5 →</a></div>
 <ul class="ticks"><li>Stop loss en cada operación</li><li>Sin martingala, sin grid, sin promediar en contra</li><li>Clave de licencia por email al instante después del pago</li></ul>
 </div>
 <img src="/img/img02.webp" alt="Tetrarch EA – trading algorítmico de oro">
@@ -257,6 +262,7 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 <p class="muted">USD 189 pago único · garantía de reembolso de 7 días · licencia al instante por email</p>
 <a class="btn big" href="https://pay.hotmart.com/F108310139U?checkoutMode=10" data-checkout="1" data-cta="buy-bottom">Comprar Tetrarch EA →</a>
 <div class="meli"><span>🇦🇷 ¿Estás en Argentina? <b>Pagá en cuotas fijas.</b></span><a class="btn mlb" href="https://meli.la/1qwvZKW" target="_blank" rel="noopener" data-cta="meli-bottom">Pagar en cuotas con Mercado Libre →</a></div>
+<div class="mqb"><span>¿Usás el Market de MetaTrader? <b style="color:var(--gold2)">También está en MQL5.</b></span><a class="btn secondary" href="https://www.mql5.com/es/market/product/203924?source=Site+Profile+Seller" target="_blank" rel="noopener" data-cta="mql5-bottom">Comprar en MQL5 →</a></div>
 <div class="risk"><b>Advertencia de riesgo.</b> Operar CFD con apalancamiento implica un alto riesgo y puede causar la pérdida de todo el capital. Los resultados pasados, reales o simulados, no garantizan resultados futuros. Tetrarch EA es una herramienta de automatización y no constituye asesoramiento financiero. Contacto: <a href="mailto:tetrarchbot@gmail.com" style="color:var(--gold2)">tetrarchbot@gmail.com</a></div>
 </section>
 </main>
