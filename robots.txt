@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /promo
+
+Sitemap: https://tetrarch.site/sitemap.xml
