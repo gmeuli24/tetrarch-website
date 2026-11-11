@@ -53,6 +53,28 @@ code{background:#0c0b08;border:1px solid #392d18;border-radius:5px;padding:2px 6
 ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#d8cdb4;font-size:14px}ul.ticks li{margin:8px 0}ul.ticks li::before{content:'✔ ';color:var(--gold)}
 @media(max-width:850px){.grid2{grid-template-columns:1fr}}
 </style>
+<style>
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;align-items:center}
+.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-.035em;margin:12px 0}.g{color:var(--gold2)}
+.lead{color:var(--muted);font-size:17px;max-width:620px}.lead b{color:var(--text)}
+.formcard{background:linear-gradient(145deg,#1b160c,#0e0d09);border:1px solid #8a6a2e;border-radius:16px;padding:20px;margin-top:22px;box-shadow:0 0 40px #e8bd6022}
+.formcard .row{display:flex;gap:10px;flex-wrap:wrap}.formcard .row input{flex:1 1 220px}
+.btn.big{padding:15px 22px;font-size:15px}
+.micro{font-size:12.5px;color:#cbbf9f;margin-top:10px}
+.vid{margin:0;text-align:center}.vid video{width:100%;max-width:330px;border-radius:18px;border:1px solid var(--line);box-shadow:0 10px 50px #0009;background:#000}
+.vid figcaption{font-size:12px;color:#a99a79;margin-top:8px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:46px 0}.trust>div{background:#0f0d09;border:1px solid #392d18;border-radius:12px;padding:16px}
+.trust b{display:block;color:var(--gold2);font-size:16px}.trust span{font-size:13px;color:var(--muted)}
+.how h2,.faq h2{font-size:26px;margin:0 0 14px}.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.steps3>div{background:#0f0d09;border:1px solid #392d18;border-radius:12px;padding:18px}.steps3 b{display:block;font-size:16px;margin:6px 0}.steps3 p{margin:0;color:var(--muted);font-size:14px}
+.n{display:inline-flex;width:30px;height:30px;border-radius:99px;align-items:center;justify-content:center;background:var(--gold);color:#171006;font-weight:900}
+.creator{display:flex;gap:18px;align-items:center;margin:40px 0;padding:20px;border:1px solid #392d18;border-radius:14px;background:#0f0d09}
+.creator img{width:96px;height:96px;border-radius:99px;object-fit:cover;border:2px solid var(--gold);flex:none}.creator p{margin:0 0 6px;color:#e3d8bf}.mail{color:var(--gold2);font-size:14px}
+.faq details{border-bottom:1px solid #332817;padding:12px 0}.faq summary{cursor:pointer;font-weight:700}.faq p{color:var(--muted);margin:8px 0 0;font-size:14px}
+.again{text-align:center;margin:34px 0 10px}.install{margin-top:18px}.install h3{margin:0 0 4px;color:var(--gold2)}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.vid video{max-width:280px}.trust{grid-template-columns:1fr 1fr}.steps3{grid-template-columns:1fr}}
+@media(max-width:560px){.formcard .btn.big{width:100%}.creator{flex-direction:column;text-align:center}.hero h1{font-size:34px}.lead{font-size:15.5px}}
+</style>
 </head>
 <body>
 <header class="top"><div class="wrap nav">
@@ -64,51 +86,80 @@ ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#d8cdb4;font-size:14px}
 <div class="lang"><button class="active" data-lang="es">ES</button><button data-lang="en">EN</button></div>
 </nav></div></header>
 <main class="wrap">
-<section class="intro">
-<div class="eyebrow" data-es="PRUEBA GRATIS · DEMO SIN LÍMITE · 14 DÍAS EN REAL" data-en="FREE TRIAL · UNLIMITED DEMO · 14 DAYS LIVE">PRUEBA GRATIS · DEMO SIN LÍMITE · 14 DÍAS EN REAL</div>
-<h1 data-es="Probá <span style='color:var(--gold2)'>Tetrarch</span> gratis" data-en="Try <span style='color:var(--gold2)'>Tetrarch</span> for free">Probá <span style="color:var(--gold2)">Tetrarch</span> gratis</h1>
-<p data-es="Recibí al instante tu clave: usá Tetrarch <b>sin límite en cuentas demo</b> y <b>14 días en una cuenta real</b>. Es el mismo bot que corre en nuestra cuenta real." data-en="Get your key instantly: run Tetrarch <b>with no time limit on demo accounts</b> and <b>for 14 days on one live account</b>. The same bot that runs on our live account.">Recibí al instante tu clave: usá Tetrarch <b>sin límite en cuentas demo</b> y <b>14 días en una cuenta real</b>. Es el mismo bot que corre en nuestra cuenta real.</p>
+<section class="hero">
+ <div class="hero-copy">
+  <div class="eyebrow" data-es="PRUEBA GRATIS · SIN TARJETA" data-en="FREE TRIAL · NO CARD">PRUEBA GRATIS · SIN TARJETA</div>
+  <h1 data-es="Operá oro en automático, con el <span class='g'>riesgo bajo control</span>" data-en="Trade gold on autopilot, with <span class='g'>risk under control</span>">Operá oro en automático, con el <span class="g">riesgo bajo control</span></h1>
+  <p class="lead" data-es="Un bot para MetaTrader 5 con <b>stop loss en cada operación</b>. Dejá tu email y recibí tu clave al instante: <b>demo sin límite</b> y <b>14 días en cuenta real</b>." data-en="A MetaTrader 5 bot with <b>a stop loss on every trade</b>. Leave your email and get your key instantly: <b>unlimited demo</b> and <b>14 days on a live account</b>.">Un bot para MetaTrader 5 con <b>stop loss en cada operación</b>. Dejá tu email y recibí tu clave al instante: <b>demo sin límite</b> y <b>14 días en cuenta real</b>.</p>
+  <section class="formcard" id="form-panel">
+   <form id="trial-form" novalidate>
+    <input type="hidden" id="name" value="">
+    <label for="email" data-es="Tu email" data-en="Your email">Tu email</label>
+    <div class="row"><input type="email" id="email" maxlength="254" autocomplete="email" placeholder="nombre@email.com" required>
+    <button class="btn big" type="submit" id="submit" data-es="Quiero mi clave gratis" data-en="Get my free key">Quiero mi clave gratis</button></div>
+    <input class="hp" type="text" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="micro" data-es="✓ Sin tarjeta &nbsp; ✓ No te cobramos nada &nbsp; ✓ Llega en segundos" data-en="✓ No card &nbsp; ✓ No charge &nbsp; ✓ Arrives in seconds">✓ Sin tarjeta &nbsp; ✓ No te cobramos nada &nbsp; ✓ Llega en segundos</div>
+    <div class="check"><input type="checkbox" id="consent"><label for="consent" style="margin:0" data-es="Quiero recibir novedades y resultados semanales (opcional, te das de baja cuando quieras)." data-en="Send me news and weekly results (optional, unsubscribe anytime).">Quiero recibir novedades y resultados semanales (opcional, te das de baja cuando quieras).</label></div>
+    <div id="ts-box"></div>
+    <div class="msg" id="msg" role="status"></div>
+   </form>
+   <div id="sent" style="display:none"><h3 style="color:var(--gold2);margin:6px 0" data-es="¡Listo! Revisá tu correo" data-en="Done! Check your inbox">¡Listo! Revisá tu correo</h3><p class="muted" id="sent-msg"></p><a class="btn" href="/descargas/Tetrarch_Instalador.exe" data-cta="trial-download-mail" download data-es="Descargar instalador (Windows)" data-en="Download installer (Windows)">Descargar instalador (Windows)</a></div>
+   <div id="done" style="display:none">
+    <p class="muted" data-es="Tu clave (demo sin límite · 1 cuenta real por 14 días):" data-en="Your key (unlimited demo · 1 live account for 14 days):">Tu clave (demo sin límite · 1 cuenta real por 14 días):</p>
+    <div class="keybox"><span class="key" id="key"></span><button class="btn secondary" type="button" id="copy" data-es="Copiar" data-en="Copy">Copiar</button></div>
+    <p class="muted" style="font-size:13px" id="exp"></p>
+    <a class="btn" href="/descargas/Tetrarch_Instalador.exe" data-cta="trial-download" download data-es="Descargar instalador (Windows)" data-en="Download installer (Windows)">Descargar instalador (Windows)</a>
+   </div>
+   <div id="install" style="display:none" class="install">
+    <h3 data-es="Instalación (2 minutos)" data-en="Install (2 minutes)">Instalación (2 minutos)</h3>
+    <ol class="steps">
+     <li data-es="Usá una cuenta de MetaTrader 5 de cobertura (hedging), demo o real. Si es real, empezá con poco capital o una cuenta cent." data-en="Use a MetaTrader 5 hedging account, demo or live. On a live account, start small or use a cent account.">Usá una cuenta de MetaTrader 5 de cobertura (hedging), demo o real. Si es real, empezá con poco capital o una cuenta cent.</li>
+     <li data-es="Ejecutá el instalador y pegá la clave cuando te la pida." data-en="Run the installer and paste the key when asked.">Ejecutá el instalador y pegá la clave cuando te la pida.</li>
+     <li data-es="El instalador copia la dirección de la licencia. En MT5: Herramientas → Opciones → Asesores Expertos → marcá «Permitir WebRequest», doble clic en «agregar nueva URL» y pegá con <b>Ctrl+V</b>." data-en="The installer copies the license address. In MT5: Tools → Options → Expert Advisors → tick “Allow WebRequest”, double-click “add new URL” and paste with <b>Ctrl+V</b>.">El instalador copia la dirección de la licencia. En MT5: Herramientas → Opciones → Asesores Expertos → marcá «Permitir WebRequest», doble clic en «agregar nueva URL» y pegá con <b>Ctrl+V</b>.</li>
+     <li data-es="Abrí un gráfico de <b>XAUUSD</b>, arrastrá Tetrarch, elegí el perfil y activá «Trading algorítmico»." data-en="Open an <b>XAUUSD</b> chart, drag Tetrarch onto it, choose the profile and enable “Algo Trading”.">Abrí un gráfico de <b>XAUUSD</b>, arrastrá Tetrarch, elegí el perfil y activá «Trading algorítmico».</li>
+     <li data-es="Dejalo corriendo de lunes a viernes (idealmente en un VPS)." data-en="Leave it running Monday to Friday (ideally on a VPS).">Dejalo corriendo de lunes a viernes (idealmente en un VPS).</li>
+    </ol>
+   </div>
+  </section>
+ </div>
+ <figure class="vid">
+  <video src="/img/tetrarch_vivo.mp4" poster="/img/tetrarch_vivo_poster.jpg" autoplay muted loop playsinline controls preload="metadata"></video>
+  <figcaption data-es="Operación real en vivo · ruptura del rango de Asia, con stop loss" data-en="Real live trade · Asian range breakout, with stop loss">Operación real en vivo · ruptura del rango de Asia, con stop loss</figcaption>
+ </figure>
 </section>
-<div class="grid2">
-<section class="panel" id="form-panel">
-<h2 data-es="Pedí tu clave" data-en="Get your key">Pedí tu clave</h2>
-<form id="trial-form" novalidate>
-<label for="name" data-es="Nombre" data-en="Name">Nombre</label>
-<input type="text" id="name" maxlength="80" autocomplete="given-name">
-<label for="email" data-es="Email (te enviamos la clave)" data-en="Email (we send you the key)">Email (te enviamos la clave)</label>
-<input type="email" id="email" maxlength="254" autocomplete="email" required>
-<input class="hp" type="text" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-<div class="check"><input type="checkbox" id="consent"><label for="consent" style="margin:0" data-es="Quiero recibir novedades y resultados semanales de Tetrarch (podés darte de baja cuando quieras)." data-en="I want to receive Tetrarch news and weekly results (unsubscribe anytime).">Quiero recibir novedades y resultados semanales de Tetrarch (podés darte de baja cuando quieras).</label></div>
-<div id="ts-box"></div>
-<button class="btn" type="submit" id="submit" style="width:100%;margin-top:6px" data-es="Obtener clave de prueba" data-en="Get trial key">Obtener clave de prueba</button>
-<div class="msg" id="msg" role="status"></div>
-</form>
-<div id="sent" style="display:none"><h3 style="color:var(--gold2);margin:6px 0" data-es="¡Listo! Revisá tu correo" data-en="Done! Check your inbox">¡Listo! Revisá tu correo</h3><p class="muted" id="sent-msg"></p><a class="btn" href="/descargas/Tetrarch_Instalador.exe" data-cta="trial-download-mail" download data-es="Descargar instalador (Windows)" data-en="Download installer (Windows)">Descargar instalador (Windows)</a></div>
-<div id="done" style="display:none">
-<p class="muted" data-es="Tu clave (demo sin límite · 1 cuenta real por 14 días):" data-en="Your key (unlimited demo · 1 live account for 14 days):">Tu clave (demo sin límite · 1 cuenta real por 14 días):</p>
-<div class="keybox"><span class="key" id="key"></span><button class="btn secondary" type="button" id="copy" data-es="Copiar" data-en="Copy">Copiar</button></div>
-<p class="muted" style="font-size:13px" id="exp"></p>
-<a class="btn" href="/descargas/Tetrarch_Instalador.exe" data-cta="trial-download" download data-es="Descargar instalador (Windows)" data-en="Download installer (Windows)">Descargar instalador (Windows)</a>
-</div>
-<p class="note" data-es="Demo sin límite. La prueba en cuenta real es una sola por persona: los 14 días empiezan cuando la activás en real." data-en="Unlimited on demo. The live-account trial is once per person: the 14 days start when you first run it live.">Demo sin límite. La prueba en cuenta real es una sola por persona: los 14 días empiezan cuando la activás en real.</p>
+
+<section class="trust">
+ <div><b data-es="Stop loss" data-en="Stop loss">Stop loss</b><span data-es="en cada operación" data-en="on every trade">en cada operación</span></div>
+ <div><b data-es="Freno diario" data-en="Daily brake">Freno diario</b><span data-es="de pérdidas automático" data-en="automatic loss limit">de pérdidas automático</span></div>
+ <div><b data-es="Sin martingala" data-en="No martingale">Sin martingala</b><span data-es="ni grid ni promediar" data-en="no grid, no averaging">ni grid ni promediar</span></div>
+ <div><a href="https://www.myfxbook.com/members/Tetrarch/tetrarch/12278068" target="_blank" rel="noopener"><b data-es="Cuenta real ↗" data-en="Live account ↗">Cuenta real ↗</b><span data-es="seguimiento en Myfxbook" data-en="tracked on Myfxbook">seguimiento en Myfxbook</span></a></div>
 </section>
-<section class="panel">
-<h2 data-es="Cómo instalarlo" data-en="How to install">Cómo instalarlo</h2>
-<ol class="steps">
-<li data-es="Usá una cuenta de MetaTrader 5 de cobertura (hedging), demo o real. Si es real, empezá con poco capital o una cuenta cent." data-en="Use a MetaTrader 5 hedging account, demo or live. On a live account, start small or use a cent account.">Usá una cuenta de MetaTrader 5 de cobertura (hedging), demo o real. Si es real, empezá con poco capital o una cuenta cent.</li>
-<li data-es="Ejecutá el instalador y pegá la clave cuando te la pida." data-en="Run the installer and paste the key when asked.">Ejecutá el instalador y pegá la clave cuando te la pida.</li>
-<li data-es="El instalador copia la dirección de la licencia. En MT5: Herramientas → Opciones → Asesores Expertos → marcá «Permitir WebRequest», doble clic en «agregar nueva URL» y pegá con <b>Ctrl+V</b>." data-en="The installer copies the license address. In MT5: Tools → Options → Expert Advisors → tick “Allow WebRequest”, double-click “add new URL” and paste with <b>Ctrl+V</b>.">El instalador copia la dirección de la licencia. En MT5: Herramientas → Opciones → Asesores Expertos → marcá «Permitir WebRequest», doble clic en «agregar nueva URL» y pegá con <b>Ctrl+V</b>.</li>
-<li data-es="Abrí un gráfico de <b>XAUUSD</b>, arrastrá Tetrarch, elegí el perfil y activá «Trading algorítmico»." data-en="Open an <b>XAUUSD</b> chart, drag Tetrarch onto it, choose the profile and enable “Algo Trading”.">Abrí un gráfico de <b>XAUUSD</b>, arrastrá Tetrarch, elegí el perfil y activá «Trading algorítmico».</li>
-<li data-es="Dejalo corriendo de lunes a viernes (idealmente en un VPS). Al terminar la prueba podés comprarlo en MQL5." data-en="Leave it running Monday to Friday (ideally on a VPS). When the trial ends you can buy it on MQL5.">Dejalo corriendo de lunes a viernes (idealmente en un VPS). Al terminar la prueba podés comprarlo en MQL5.</li>
-</ol>
-<ul class="ticks">
-<li data-es="Stop loss en cada operación" data-en="Stop loss on every trade">Stop loss en cada operación</li>
-<li data-es="Límite de pérdida diaria" data-en="Daily loss limit">Límite de pérdida diaria</li>
-<li data-es="Sin martingala ni grid" data-en="No martingale, no grid">Sin martingala ni grid</li>
-</ul>
-<p class="note" data-es="Operar CFD con apalancamiento implica alto riesgo y puede causar la pérdida de todo el capital. Los resultados pasados, reales o simulados, no garantizan resultados futuros." data-en="Trading leveraged CFDs involves high risk and can result in the loss of all your capital. Past results, real or simulated, do not guarantee future results.">Operar CFD con apalancamiento implica alto riesgo y puede causar la pérdida de todo el capital. Los resultados pasados, reales o simulados, no garantizan resultados futuros.</p>
+
+<section class="how">
+ <h2 data-es="Cómo funciona" data-en="How it works">Cómo funciona</h2>
+ <div class="steps3">
+  <div><span class="n">1</span><b data-es="Dejá tu email" data-en="Leave your email">Dejá tu email</b><p data-es="Te llega la clave y el instalador al instante." data-en="You get the key and installer instantly.">Te llega la clave y el instalador al instante.</p></div>
+  <div><span class="n">2</span><b data-es="Instalalo en 2 minutos" data-en="Install in 2 minutes">Instalalo en 2 minutos</b><p data-es="Un instalador para Windows que lo deja listo en MetaTrader 5." data-en="A Windows installer that sets it up in MetaTrader 5.">Un instalador para Windows que lo deja listo en MetaTrader 5.</p></div>
+  <div><span class="n">3</span><b data-es="Elegí el perfil y dejalo operar" data-en="Pick a profile and let it trade">Elegí el perfil y dejalo operar</b><p data-es="Empezá en demo, con dinero ficticio, y mirá cómo opera." data-en="Start on demo with virtual money and watch it trade.">Empezá en demo, con dinero ficticio, y mirá cómo opera.</p></div>
+ </div>
 </section>
-</div>
+
+<section class="creator">
+ <img src="/img/gustavo.jpg" alt="Gustavo Meuli" width="96" height="96">
+ <div><p data-es="“Hola, soy <b>Gustavo</b>, desarrollador de Tetrarch en Argentina. Lo hice para operar el oro con reglas claras y sin miedo a quemar la cuenta. Probalo tranquilo: si tenés dudas, te respondo yo.”" data-en="“Hi, I'm <b>Gustavo</b>, Tetrarch's developer in Argentina. I built it to trade gold with clear rules and without fear of blowing the account. Try it calmly: if you have questions, I answer them myself.”">“Hola, soy <b>Gustavo</b>, desarrollador de Tetrarch en Argentina. Lo hice para operar el oro con reglas claras y sin miedo a quemar la cuenta. Probalo tranquilo: si tenés dudas, te respondo yo.”</p>
+ <a class="mail" href="mailto:tetrarchbot@gmail.com">tetrarchbot@gmail.com</a></div>
+</section>
+
+<section class="faq">
+ <h2 data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</h2>
+ <details><summary data-es="¿Necesito saber de trading?" data-en="Do I need trading experience?">¿Necesito saber de trading?</summary><p data-es="No. El bot decide las entradas, el stop y la salida. Vos elegís el perfil de riesgo y lo dejás corriendo." data-en="No. The bot decides entries, stop and exit. You choose the risk profile and leave it running.">No. El bot decide las entradas, el stop y la salida. Vos elegís el perfil de riesgo y lo dejás corriendo.</p></details>
+ <details><summary data-es="¿Me van a pedir tarjeta o cobrar algo?" data-en="Will you ask for a card or charge me?">¿Me van a pedir tarjeta o cobrar algo?</summary><p data-es="No. La prueba es gratis y solo pide tu email. Si después querés seguir usándolo en real, lo comprás aparte." data-en="No. The trial is free and only needs your email. If you want to keep using it live afterwards, you buy it separately.">No. La prueba es gratis y solo pide tu email. Si después querés seguir usándolo en real, lo comprás aparte.</p></details>
+ <details><summary data-es="¿Puedo perder plata probándolo?" data-en="Can I lose money trying it?">¿Puedo perder plata probándolo?</summary><p data-es="En una cuenta demo no: es dinero ficticio. En una cuenta real sí existe riesgo, por eso recomendamos empezar en demo." data-en="On a demo account no: it is virtual money. On a live account there is risk, so we recommend starting on demo.">En una cuenta demo no: es dinero ficticio. En una cuenta real sí existe riesgo, por eso recomendamos empezar en demo.</p></details>
+ <details><summary data-es="¿Con qué broker funciona?" data-en="Which broker does it work with?">¿Con qué broker funciona?</summary><p data-es="Con cualquier broker que ofrezca MetaTrader 5 y oro (XAUUSD) en una cuenta de cobertura (hedging). El bot ajusta solo el horario del servidor." data-en="Any broker offering MetaTrader 5 and gold (XAUUSD) on a hedging account. The bot adapts to the server time on its own.">Con cualquier broker que ofrezca MetaTrader 5 y oro (XAUUSD) en una cuenta de cobertura (hedging). El bot ajusta solo el horario del servidor.</p></details>
+</section>
+
+<div class="again"><a class="btn big" href="#form-panel" data-es="Quiero mi clave gratis" data-en="Get my free key">Quiero mi clave gratis</a></div>
+<p class="note" data-es="Operar CFD con apalancamiento implica alto riesgo y puede causar la pérdida de todo el capital. Los resultados pasados, reales o simulados, no garantizan resultados futuros." data-en="Trading leveraged CFDs involves high risk and can result in the loss of all your capital. Past results, live or simulated, do not guarantee future results.">Operar CFD con apalancamiento implica alto riesgo y puede causar la pérdida de todo el capital. Los resultados pasados, reales o simulados, no garantizan resultados futuros.</p>
 </main>
 <footer class="footer"><div class="wrap footer-row"><a href="/">TETRARCH · <span data-es="Volver al sitio" data-en="Back to website">Volver al sitio</span></a><a href="https://www.myfxbook.com/members/Tetrarch/tetrarch/12278068" target="_blank" rel="noopener">Myfxbook ↗</a></div></footer>
 <script>
@@ -141,7 +192,7 @@ document.getElementById('trial-form').addEventListener('submit',async e=>{
     const d=await r.json().catch(()=>({}));
     if(!d.ok){msg.className='msg err';msg.textContent=tr(d.error)||tr('ERR');btn.disabled=false;btn.textContent=old;if(window.turnstile)turnstile.reset();return}
     if(window.gtag)gtag('event','trial_key_created',{source:src});
-    document.getElementById('trial-form').style.display='none';
+    document.getElementById('trial-form').style.display='none';document.getElementById('install').style.display='block';
     if(d.mailed&&!d.key){sentTo=email;document.getElementById('sent').style.display='block';renderSent();return}
     document.getElementById('done').style.display='block';
     document.getElementById('key').textContent=d.key;lastExp=d.expires_at;mailed=!!d.mailed;shown=true;renderExp();
