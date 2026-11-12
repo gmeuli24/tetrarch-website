@@ -192,7 +192,7 @@ document.getElementById('trial-form').addEventListener('submit',async e=>{
     const d=await r.json().catch(()=>({}));
     if(!d.ok){msg.className='msg err';msg.textContent=tr(d.error)||tr('ERR');btn.disabled=false;btn.textContent=old;if(window.turnstile)turnstile.reset();return}
     if(window.gtag)gtag('event','trial_key_created',{source:src});
-    document.getElementById('trial-form').style.display='none';document.getElementById('install').style.display='block';
+    document.getElementById('trial-form').style.display='none';document.getElementById('install').style.display='block';try{if(window.fbq)fbq('track','Lead',{content_name:'Prueba gratis 14 dias'})}catch(_){}
     if(d.mailed&&!d.key){sentTo=email;document.getElementById('sent').style.display='block';renderSent();return}
     document.getElementById('done').style.display='block';
     document.getElementById('key').textContent=d.key;lastExp=d.expires_at;mailed=!!d.mailed;shown=true;renderExp();
