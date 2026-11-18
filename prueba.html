@@ -110,6 +110,16 @@ ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#c0cad7;font-size:14px}
     <p class="muted" style="font-size:13px" id="exp"></p>
     <a class="btn" href="/descargas/Tetrarch_Instalador.exe" data-cta="trial-download" download data-es="Descargar instalador (Windows)" data-en="Download installer (Windows)">Descargar instalador (Windows)</a>
    </div>
+   <div id="winhelp" style="display:none;margin:16px 0;padding:16px 18px;border:1px solid #c28c31;border-radius:12px;background:linear-gradient(145deg,#2a2110,#1a1609)">
+    <h3 style="margin:0 0 8px;color:var(--gold2)" data-es="Mientras se descarga: si Windows lo bloquea" data-en="While it downloads: if Windows blocks it">Mientras se descarga: si Windows lo bloquea</h3>
+    <div aria-hidden="true" style="background:#0a5ea8;color:#fff;border-radius:8px;padding:12px 14px;font:13px/1.5 'Segoe UI',system-ui,sans-serif;max-width:440px;margin:8px 0"><b style="display:block;font-size:17px;font-weight:600">Windows protegió su PC</b>SmartScreen impidió el inicio de una aplicación no reconocida…<br><u>Más información</u></div>
+    <ol class="steps" style="margin:8px 0">
+     <li data-es="Si el navegador avisa que el archivo &quot;no se descarga con frecuencia&quot;, elegí <b>Conservar</b>." data-en="If the browser says the file &quot;isn't commonly downloaded&quot;, choose <b>Keep</b>.">Si el navegador avisa que el archivo "no se descarga con frecuencia", elegí <b>Conservar</b>.</li>
+     <li data-es="Si aparece la pantalla azul <b>Windows protegió su PC</b>: hacé clic en <b>Más información</b> y después en <b>Ejecutar de todas formas</b>. Pasa con cualquier programa nuevo; no es un virus." data-en="If the blue <b>Windows protected your PC</b> screen appears: click <b>More info</b>, then <b>Run anyway</b>. It happens with any new program; it is not a virus.">Si aparece la pantalla azul <b>Windows protegió su PC</b>: hacé clic en <b>Más información</b> y después en <b>Ejecutar de todas formas</b>. Pasa con cualquier programa nuevo; no es un virus.</li>
+     <li data-es="Si el antivirus lo borra: <b>Seguridad de Windows</b> → Protección contra virus → <b>Historial de protección</b> → <b>Permitir</b>." data-en="If the antivirus removes it: <b>Windows Security</b> → Virus protection → <b>Protection history</b> → <b>Allow</b>.">Si el antivirus lo borra: <b>Seguridad de Windows</b> → Protección contra virus → <b>Historial de protección</b> → <b>Permitir</b>.</li>
+    </ol>
+    <a class="g" href="/instalar" data-es="<b>Ver la guía completa con todos los pasos →</b>" data-en="<b>See the full step-by-step guide →</b>"><b>Ver la guía completa con todos los pasos →</b></a>
+   </div>
    <div id="install" style="display:none" class="install">
     <h3 data-es="Instalación (2 minutos)" data-en="Install (2 minutes)">Instalación (2 minutos)</h3>
     <ol class="steps">
@@ -203,4 +213,5 @@ document.getElementById('copy').addEventListener('click',async()=>{try{await nav
 document.querySelectorAll('[data-cta]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','cta_click',{cta:a.dataset.cta})}));
 setLang('es');
 </script>
+<script>document.querySelectorAll('a[href="/descargas/Tetrarch_Instalador.exe"]').forEach(a=>a.addEventListener('click',()=>{const w=document.getElementById('winhelp');if(w){w.style.display='block';setTimeout(()=>w.scrollIntoView({behavior:'smooth',block:'center'}),300);}if(window.gtag)gtag('event','winhelp_shown');}));</script>
 </body></html>
