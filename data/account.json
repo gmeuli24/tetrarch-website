@@ -6,7 +6,7 @@
     "accountId": 36462247,
     "balance": 11420.52,
     "currency": "USC",
-    "daily": 0.48,
+    "daily": 0.46,
     "demo": false,
     "drawdown": 6.61,
     "equity": 11420.52,
@@ -20,5 +20,5 @@
     "profitFactor": 1.52,
     "server": "Vantage Markets"
   },
-  "syncedAt": "2026-11-22T16:15:28.175245+00:00"
+  "syncedAt": "2026-11-23T00:50:02.492810+00:00"
 }
