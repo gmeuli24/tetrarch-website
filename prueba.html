@@ -103,12 +103,12 @@ ul.ticks{list-style:none;padding:0;margin:12px 0 0;color:#c0cad7;font-size:14px}
     <div id="ts-box"></div>
     <div class="msg" id="msg" role="status"></div>
    </form>
-   <div id="sent" style="display:none"><h3 style="color:var(--gold2);margin:6px 0" data-es="¡Listo! Revisá tu correo" data-en="Done! Check your inbox">¡Listo! Revisá tu correo</h3><p class="muted" id="sent-msg"></p><a class="btn" href="/descargas/Tetrarch_Instalador.exe" data-cta="trial-download-mail" download data-es="Descargar instalador (Windows)" data-en="Download installer (Windows)">Descargar instalador (Windows)</a></div>
+   <div id="sent" style="display:none"><h3 style="color:var(--gold2);margin:6px 0" data-es="¡Listo! Revisá tu correo" data-en="Done! Check your inbox">¡Listo! Revisá tu correo</h3><p class="muted" id="sent-msg"></p><a class="btn" href="/descargas/Tetrarch_Instalador.zip" data-cta="trial-download-mail" download data-es="Descargar instalador (Windows)" data-en="Download installer (Windows)">Descargar instalador (Windows)</a></div>
    <div id="done" style="display:none">
     <p class="muted" data-es="Tu clave (demo sin límite · 1 cuenta real por 14 días):" data-en="Your key (unlimited demo · 1 live account for 14 days):">Tu clave (demo sin límite · 1 cuenta real por 14 días):</p>
     <div class="keybox"><span class="key" id="key"></span><button class="btn secondary" type="button" id="copy" data-es="Copiar" data-en="Copy">Copiar</button></div>
     <p class="muted" style="font-size:13px" id="exp"></p>
-    <a class="btn" href="/descargas/Tetrarch_Instalador.exe" data-cta="trial-download" download data-es="Descargar instalador (Windows)" data-en="Download installer (Windows)">Descargar instalador (Windows)</a>
+    <a class="btn" href="/descargas/Tetrarch_Instalador.zip" data-cta="trial-download" download data-es="Descargar instalador (Windows)" data-en="Download installer (Windows)">Descargar instalador (Windows)</a>
    </div>
    <div id="winhelp" style="display:none;margin:16px 0;padding:16px 18px;border:1px solid #c28c31;border-radius:12px;background:linear-gradient(145deg,#2a2110,#1a1609)">
     <h3 style="margin:0 0 8px;color:var(--gold2)" data-es="Mientras se descarga: si Windows lo bloquea" data-en="While it downloads: if Windows blocks it">Mientras se descarga: si Windows lo bloquea</h3>
@@ -213,5 +213,5 @@ document.getElementById('copy').addEventListener('click',async()=>{try{await nav
 document.querySelectorAll('[data-cta]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','cta_click',{cta:a.dataset.cta})}));
 setLang('es');
 </script>
-<script>document.querySelectorAll('a[href="/descargas/Tetrarch_Instalador.exe"]').forEach(a=>a.addEventListener('click',()=>{const w=document.getElementById('winhelp');if(w){w.style.display='block';setTimeout(()=>w.scrollIntoView({behavior:'smooth',block:'center'}),300);}if(window.gtag)gtag('event','winhelp_shown');}));</script>
+<script>document.querySelectorAll('a[href="/descargas/Tetrarch_Instalador.zip"]').forEach(a=>a.addEventListener('click',()=>{const w=document.getElementById('winhelp');if(w){w.style.display='block';setTimeout(()=>w.scrollIntoView({behavior:'smooth',block:'center'}),300);}if(window.gtag)gtag('event','winhelp_shown');}));</script>
 </body></html>
