@@ -112,22 +112,22 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 <section class="blk" data-id="results">
 <div class="eyebrow">LONG-TERM SOLIDITY · SIMULATED BACKTESTS</div>
 <h2>7 years of gold, one configuration</h2>
-<p class="muted" style="margin:-4px 0 14px">Profit factor <b style="color:var(--gold2)">1.55 since 2024</b> · <b style="color:var(--gold2)">1.32 average over 7 years</b>, trends and ranges included.</p>
+<p class="muted" style="margin:-4px 0 14px">Version 1.60 · Profit factor <b style="color:var(--gold2)">1.34 over almost 7 years</b> without compounding · <b style="color:var(--gold2)">7 out of 7 years positive</b> with max compounding.</p>
 <div class="table-wrap"><table class="bt"><thead><tr><th>Period (data)</th><th>Return</th><th>Profit factor</th><th>Max drawdown</th><th>Trades</th></tr></thead><tbody>
-<tr><td><b>Jan 2020 – Nov 2026 · total, almost 7 years</b></td><td><b>+70,442 USD</b></td><td><b>1.32</b></td><td><b>20.2%</b></td><td><b>3,808</b></td></tr>
-<tr><td>Jan 2024 – Nov 2026</td><td>+517%</td><td>1.55</td><td>8.0%</td><td>1,644</td></tr>
-<tr><td>Jan 2020 – Dec 2023</td><td>+188%</td><td>1.15</td><td>20.2%</td><td>2,164</td></tr>
+<tr><td><b>Jan 2020 – Nov 2026 · Standard, no compounding</b></td><td><b>+USD 99,970</b></td><td><b>1.34</b></td><td><b>9.8%</b></td><td><b>7,279</b></td></tr>
+<tr><td>Jan 2020 – Nov 2026 · Standard, max compounding</td><td>+167,882%</td><td>1.52</td><td>32.5%</td><td>7,258</td></tr>
 </tbody></table></div>
-<p class="note">MetaTrader 5 Strategy Tester, every tick based on real ticks, real spread and commission (Vantage), Standard profile, no compounding, USD 10,000 deposit per period. Simulated results do not guarantee future results. Tetrarch also runs on a live account with public tracking on Myfxbook (user: Tetrarch), including losing weeks.</p>
+<p class="note">MetaTrader 5 Strategy Tester, every tick based on real ticks, real spread and commission (Vantage), Standard profile, version 1.60 (gold + USDJPY + BTCUSD), USD 10,000 deposit. Simulated results do not guarantee future results. Tetrarch also runs on a live account with public tracking on Myfxbook (user: Tetrarch), including losing weeks.</p>
 </section>
 <section class="blk" data-id="strategies">
-<div class="eyebrow">THE FOUR STRATEGIES</div>
+<div class="eyebrow">THE FOUR STRATEGIES + 2 SUB-STRATEGIES</div>
 <h2>Each one wins in a different market phase</h2>
 <div class="grid4">
 <div class="card"><h3>Momentum</h3><p>Catches fast intraday moves. At 3× the risk it locks in profit and lets the rest run with a trailing stop.</p></div>
 <div class="card"><h3>Multi-day breakout</h3><p>Enters when gold breaks the high or low of recent days, targets up to 5× the risk and closes before the weekend.</p></div>
 <div class="card"><h3>Pullback</h3><p>Waits for a confirmed change in structure and enters on the pullback instead of chasing price.</p></div>
 <div class="card"><h3>Session</h3><p>Follows the direction gold usually takes at the European open. At most one trade per day.</p></div>
+<div class="card"><h3>USDJPY &amp; BTCUSD <span style="color:var(--gold2);font-size:12px">NEW 1.60</span></h3><p>The session-range logic applied to dollar-yen and bitcoin. Adds results in other markets when gold is ranging. Can be turned off.</p></div>
 </div>
 </section>
 <section class="blk">
@@ -143,12 +143,12 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 </section>
 <section class="blk" data-id="power" style="padding-top:0">
 <div class="pbox" style="margin:30px 0">
-<div class="eyebrow" style="margin-bottom:6px">FOR THOSE WHO WANT TO ACCELERATE · MOST AGGRESSIVE PROFILE</div><div class="ptag">Aggressive profile · Max compounding · Backtest Jan 2024 – Oct 2026</div>
-<div class="pbig"><span class="from">USD 10,000</span><span class="arrow">→</span><span class="to">USD 1,184,900</span></div>
-<p class="muted" style="margin:6px 0 0">The full power of Tetrarch, whenever you want it. You choose how hard to push.</p>
-<div class="pstats"><div><b>+11,749%</b><span>return</span></div><div><b>20.2%</b><span>max drawdown</span></div><div><b>4</b><span>trading engines</span></div><div><b>100%</b><span>trades with stop loss</span></div></div>
-<table class="ladder"><tr><td><b>Profile and mode</b></td><td class="v">Profit</td><td class="v">Max DD</td></tr><tr><td><b>Aggressive</b> + max compounding</td><td class="v">+11,749%</td><td class="v" style="color:#c0cad7">20.2%</td></tr><tr><td><b>Standard</b> + max compounding</td><td class="v">+3,193%</td><td class="v" style="color:#c0cad7">15.3%</td></tr><tr><td><b>Conservative</b> + max compounding</td><td class="v">+1,368%</td><td class="v" style="color:#c0cad7">11.8%</td></tr><tr><td><b>Standard</b> + prudent compounding</td><td class="v">+616%</td><td class="v" style="color:#c0cad7">11.4%</td></tr><tr><td><b>Aggressive</b> no compounding</td><td class="v">+580%</td><td class="v" style="color:#c0cad7">12.7%</td></tr><tr><td><b>Standard</b> no compounding</td><td class="v">+399%</td><td class="v" style="color:#c0cad7">10.4%</td></tr><tr><td><b>Conservative</b> no compounding</td><td class="v">+298%</td><td class="v" style="color:#c0cad7">10.3%</td></tr></table>
-<p class="pnote">Same period (FundedNext, Jan 2024 – Oct 2026, trending years), same trades, USD 10,000 deposit: only position size changes. In ranging years (Vantage 2020 – Aug 2024) max compounding doubles or triples drawdowns: Aggressive reached 63.7%. Long term: profit factor 1.32 over almost 7 years (Standard). Real-tick backtests; simulated results do not guarantee future results.</p>
+<div class="eyebrow" style="margin-bottom:6px">FOR THOSE WHO WANT TO ACCELERATE · COMPOUNDING</div><div class="ptag">Standard profile · Max compounding · Backtest Jan 2020 – Nov 2026</div>
+<div class="pbig"><span class="from">USD 10,000</span><span class="arrow">→</span><span class="to">USD 16,798,188</span></div>
+<p class="muted" style="margin:6px 0 0">7 out of 7 years positive. The full power of Tetrarch, whenever you want it. You choose how hard to push.</p>
+<div class="pstats"><div><b>+167,882%</b><span>return</span></div><div><b>32.5%</b><span>max drawdown</span></div><div><b>3</b><span>markets: gold, USDJPY, BTC</span></div><div><b>100%</b><span>trades with stop loss</span></div></div>
+<table class="ladder"><tr><td><b>Profile and mode</b></td><td class="v">Profit</td><td class="v">Max DD</td></tr><tr><td><b>Standard</b> + max compounding</td><td class="v">+167,882%</td><td class="v" style="color:#c0cad7">32.5%</td></tr><tr><td><b>Aggressive</b> no compounding</td><td class="v">+1,412%</td><td class="v" style="color:#c0cad7">11.3%</td></tr><tr><td><b>Standard</b> no compounding</td><td class="v">+1,000%</td><td class="v" style="color:#c0cad7">9.8%</td></tr><tr><td><b>Conservative</b> no compounding</td><td class="v">+783%</td><td class="v" style="color:#c0cad7">8.8%</td></tr></table>
+<p class="pnote">Version 1.60 (gold + USDJPY + BTCUSD) · Vantage, Jan 2020 – Nov 2026 · real ticks · USD 10,000 deposit. Same trades: only position size changes. With compounding, percentage drawdowns are larger: Standard with max compounding fell up to 32.5% (2023). Simulated results that do not guarantee future results.</p>
 </div>
 </section>
 <section class="blk">
@@ -203,22 +203,22 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 <section class="blk" data-id="results">
 <div class="eyebrow">SOLIDEZ A LARGO PLAZO · BACKTESTS SIMULADOS</div>
 <h2>7 años de oro, una misma configuración</h2>
-<p class="muted" style="margin:-4px 0 14px">Profit factor <b style="color:var(--gold2)">1,55 desde 2024</b> · <b style="color:var(--gold2)">1,32 de promedio en 7 años</b>, con tendencias y rangos.</p>
+<p class="muted" style="margin:-4px 0 14px">Versión 1.60 · Profit factor <b style="color:var(--gold2)">1,34 en casi 7 años</b> sin compuesto · <b style="color:var(--gold2)">7 de 7 años positivos</b> con compuesto máximo.</p>
 <div class="table-wrap"><table class="bt"><thead><tr><th>Período</th><th>Resultado</th><th>Profit factor</th><th>Caída máx.</th><th>Operaciones</th></tr></thead><tbody>
-<tr><td><b>Ene 2020 – nov 2026 · total, casi 7 años</b></td><td><b>+70.442 USD</b></td><td><b>1,32</b></td><td><b>20,2%</b></td><td><b>3.808</b></td></tr>
-<tr><td>Ene 2024 – nov 2026</td><td>+517%</td><td>1,55</td><td>8,0%</td><td>1.644</td></tr>
-<tr><td>Ene 2020 – dic 2023</td><td>+188%</td><td>1,15</td><td>20,2%</td><td>2.164</td></tr>
+<tr><td><b>Ene 2020 – nov 2026 · Estándar sin compuesto</b></td><td><b>+99.970 USD</b></td><td><b>1,34</b></td><td><b>9,8%</b></td><td><b>7.279</b></td></tr>
+<tr><td>Ene 2020 – nov 2026 · Estándar con compuesto máximo</td><td>+167.882%</td><td>1,52</td><td>32,5%</td><td>7.258</td></tr>
 </tbody></table></div>
-<p class="note">Probador de MetaTrader 5, cada tick basado en ticks reales, spread y comisión reales (Vantage), perfil Estándar, sin interés compuesto, depósito de 10.000 USD por período. Los resultados simulados no garantizan resultados futuros. Tetrarch también opera en una cuenta real con seguimiento público en Myfxbook (usuario: Tetrarch), incluidas las semanas perdedoras.</p>
+<p class="note">Probador de MetaTrader 5, cada tick basado en ticks reales, spread y comisión reales (Vantage), perfil Estándar, versión 1.60 (oro + USDJPY + BTCUSD), depósito de 10.000 USD. Los resultados simulados no garantizan resultados futuros. Tetrarch también opera en una cuenta real con seguimiento público en Myfxbook (usuario: Tetrarch), incluidas las semanas perdedoras.</p>
 </section>
 <section class="blk" data-id="strategies">
-<div class="eyebrow">LAS CUATRO ESTRATEGIAS</div>
+<div class="eyebrow">LAS CUATRO ESTRATEGIAS + 2 SUB-ESTRATEGIAS</div>
 <h2>Cada una gana en una fase distinta del mercado</h2>
 <div class="grid4">
 <div class="card"><h3>Momentum</h3><p>Captura movimientos rápidos dentro del día. Al llegar a 3 veces el riesgo asegura la ganancia y deja correr el resto con un stop que sigue al precio.</p></div>
 <div class="card"><h3>Ruptura de varios días</h3><p>Entra cuando el oro rompe el máximo o el mínimo de los últimos días, apunta hasta 5 veces el riesgo y cierra antes del fin de semana.</p></div>
 <div class="card"><h3>Retroceso</h3><p>Espera un cambio de estructura confirmado y entra en el retroceso, en vez de perseguir el precio.</p></div>
 <div class="card"><h3>Sesión</h3><p>Sigue la dirección que el oro suele tomar con la apertura europea. Como máximo una operación por día.</p></div>
+<div class="card"><h3>USDJPY y BTCUSD <span style="color:var(--gold2);font-size:12px">NUEVO 1.60</span></h3><p>La lógica de rango de sesión aplicada a dólar-yen y bitcoin. Suma en otros mercados cuando el oro está lateral. Se pueden apagar.</p></div>
 </div>
 </section>
 <section class="blk">
@@ -234,12 +234,12 @@ details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin
 </section>
 <section class="blk" data-id="power" style="padding-top:0">
 <div class="pbox" style="margin:30px 0">
-<div class="eyebrow" style="margin-bottom:6px">PARA QUIEN QUIERE ACELERAR · PERFIL MÁS AGRESIVO</div><div class="ptag">Perfil Arriesgado · Compuesto máximo · Backtest ene 2024 – oct 2026</div>
-<div class="pbig"><span class="from">10.000 USD</span><span class="arrow">→</span><span class="to">1.184.900 USD</span></div>
-<p class="muted" style="margin:6px 0 0">Toda la potencia de Tetrarch, cuando la quieras usar. Elegís cuánto acelerar.</p>
-<div class="pstats"><div><b>+11.749%</b><span>resultado</span></div><div><b>20,2%</b><span>caída máxima del capital</span></div><div><b>4</b><span>motores de trading</span></div><div><b>100%</b><span>operaciones con stop</span></div></div>
-<table class="ladder"><tr><td><b>Perfil y modo</b></td><td class="v">Ganancia</td><td class="v">Caída máx.</td></tr><tr><td><b>Arriesgado</b> + compuesto máximo</td><td class="v">+11.749%</td><td class="v" style="color:#c0cad7">20,2%</td></tr><tr><td><b>Estándar</b> + compuesto máximo</td><td class="v">+3.193%</td><td class="v" style="color:#c0cad7">15,3%</td></tr><tr><td><b>Conservador</b> + compuesto máximo</td><td class="v">+1.368%</td><td class="v" style="color:#c0cad7">11,8%</td></tr><tr><td><b>Estándar</b> + compuesto prudente</td><td class="v">+616%</td><td class="v" style="color:#c0cad7">11,4%</td></tr><tr><td><b>Arriesgado</b> sin compuesto</td><td class="v">+580%</td><td class="v" style="color:#c0cad7">12,7%</td></tr><tr><td><b>Estándar</b> sin compuesto</td><td class="v">+399%</td><td class="v" style="color:#c0cad7">10,4%</td></tr><tr><td><b>Conservador</b> sin compuesto</td><td class="v">+298%</td><td class="v" style="color:#c0cad7">10,3%</td></tr></table>
-<p class="pnote">Mismo período (FundedNext, ene 2024 – oct 2026, años de tendencia), mismas operaciones, depósito de 10.000 USD: cambia solo el tamaño de las posiciones. En años de rango (Vantage 2020 – ago 2024) el compuesto máximo duplica o triplica las caídas: el Arriesgado llegó a caer 63,7%. A largo plazo: profit factor 1,32 en casi 7 años (Estándar). Backtests con ticks reales; resultados simulados que no garantizan resultados futuros.</p>
+<div class="eyebrow" style="margin-bottom:6px">PARA QUIEN QUIERE ACELERAR · INTERÉS COMPUESTO</div><div class="ptag">Perfil Estándar · Compuesto máximo · Backtest ene 2020 – nov 2026</div>
+<div class="pbig"><span class="from">10.000 USD</span><span class="arrow">→</span><span class="to">16.798.188 USD</span></div>
+<p class="muted" style="margin:6px 0 0">7 de 7 años positivos. Toda la potencia de Tetrarch, cuando la quieras usar. Elegís cuánto acelerar.</p>
+<div class="pstats"><div><b>+167.882%</b><span>resultado</span></div><div><b>32,5%</b><span>caída máxima del capital</span></div><div><b>3</b><span>mercados: oro, USDJPY, BTC</span></div><div><b>100%</b><span>operaciones con stop</span></div></div>
+<table class="ladder"><tr><td><b>Perfil y modo</b></td><td class="v">Ganancia</td><td class="v">Caída máx.</td></tr><tr><td><b>Estándar</b> + compuesto máximo</td><td class="v">+167.882%</td><td class="v" style="color:#c0cad7">32,5%</td></tr><tr><td><b>Arriesgado</b> sin compuesto</td><td class="v">+1.412%</td><td class="v" style="color:#c0cad7">11,3%</td></tr><tr><td><b>Estándar</b> sin compuesto</td><td class="v">+1.000%</td><td class="v" style="color:#c0cad7">9,8%</td></tr><tr><td><b>Conservador</b> sin compuesto</td><td class="v">+783%</td><td class="v" style="color:#c0cad7">8,8%</td></tr></table>
+<p class="pnote">Versión 1.60 (oro + USDJPY + BTCUSD) · Vantage, enero 2020 – noviembre 2026 · ticks reales · depósito de 10.000 USD. Mismas operaciones: cambia solo el tamaño de las posiciones. Con interés compuesto las caídas en porcentaje son mayores: el Estándar con compuesto máximo llegó a caer 32,5% (2023). Resultados simulados que no garantizan resultados futuros.</p>
 </div>
 </section>
 <section class="blk">
