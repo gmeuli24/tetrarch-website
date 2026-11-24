@@ -56,26 +56,35 @@ code{background:#0a182b;border:1px solid #203c61;border-radius:5px;padding:2px 6
 <h1>Instalá Tetrarch en MetaTrader 5 paso a paso</h1>
 <p class="muted">Necesitás una PC o VPS con Windows, MetaTrader 5 instalado y una cuenta de <b>cobertura (hedging)</b>, demo o real. Tené a mano la clave que te llegó por email (empieza con <code>TET-</code>).</p>
 
-<div class="step"><h2><span class="n">1</span>Descargá el instalador</h2>
-<p>Descargalo desde <a class="g" href="/descargas/Tetrarch_Instalador.zip" data-dl="1"><b>tetrarch.site/descargas/Tetrarch_Instalador.zip</b></a>.</p>
-<p>El navegador puede avisar que el archivo "no se descarga con frecuencia". Es normal en programas nuevos:</p>
-<ul><li><b>Chrome:</b> en el aviso de descarga, tocá la flecha o los tres puntos y elegí <b>Conservar</b>.</li>
-<li><b>Edge:</b> tocá los tres puntos del aviso → <b>Conservar</b> → <b>Mostrar más</b> → <b>Conservar de todos modos</b>.</li></ul></div>
+<div class="step"><h2><span class="n">1</span>Descargá Tetrarch</h2>
+<p>Descargá <a class="g" href="/descargas/Tetrarch_Instalador.zip"><b>tetrarch.site/descargas/Tetrarch_Instalador.zip</b></a>. Viene comprimido para que el navegador no lo bloquee.</p>
+<p>Cuando termine, hacé clic derecho sobre el zip → <b>Extraer todo</b> → <b>Extraer</b>. En la carpeta que se crea vas a ver:</p>
+<ul class="bullets"><li><code>Tetrarch_Instalador.exe</code>: el instalador (opción recomendada, pasos 3 a 5).</li>
+<li>La carpeta <code>Instalacion_manual</code>: el bot listo para copiar a mano, por si Windows bloquea el instalador (ver paso 2).</li></ul></div>
 
 <div class="step warn" id="windows"><h2><span class="n">2</span>Si Windows bloquea el instalador</h2>
-<p>Al abrirlo, Windows puede mostrar una pantalla azul como esta. Aparece con cualquier programa que todavía no tiene muchas descargas; <b>no significa que tenga un virus</b>.</p>
+<p>Windows puede frenar el instalador porque es un programa nuevo con pocas descargas. <b>No significa que tenga un virus.</b> Según el mensaje que veas:</p>
+
+<p><b>a) Pantalla azul "Windows protegió su PC"</b> (SmartScreen)</p>
 <div class="win" aria-hidden="true"><b>Windows protegió su PC</b>SmartScreen de Microsoft Defender impidió el inicio de una aplicación no reconocida…<br><u>Más información</u><br><span class="fake">No ejecutar</span></div>
 <ol><li>Hacé clic en el texto <b>Más información</b> (no en "No ejecutar").</li>
-<li>Aparece el botón <b>Ejecutar de todas formas</b>. Hacé clic ahí y el instalador abre normalmente.</li></ol>
-<p><b>Si el archivo desaparece o el antivirus lo bloquea:</b></p>
+<li>Aparece el botón <b>Ejecutar de todas formas</b>. Hacé clic y el instalador abre normalmente.</li></ol>
+
+<p><b>b) El archivo desaparece o el antivirus lo pone en cuarentena</b></p>
 <ol><li>Abrí <b>Seguridad de Windows</b> → <b>Protección contra virus y amenazas</b> → <b>Historial de protección</b>.</li>
 <li>Buscá el aviso de <code>Tetrarch_Instalador.exe</code> → <b>Acciones</b> → <b>Permitir</b> (o <b>Restaurar</b>).</li>
-<li>Si no abre al hacer doble clic: clic derecho sobre el archivo → <b>Propiedades</b> → abajo marcá <b>Desbloquear</b> → Aceptar, y volvé a abrirlo.</li></ol>
-<p class="muted">Si usás otro antivirus (Avast, AVG, Norton, etc.), buscá la sección "Cuarentena" y restaurá el archivo.</p>
-<p id="manual"><b>Si aparece "El Control inteligente de aplicaciones bloqueó una aplicación que podría no ser segura":</b> ese bloqueo de Windows 11 no se puede saltear. Usá la instalación manual, que no necesita ejecutar ningún programa:</p>
-<ol><li>Descargá <a class="g" href="/descargas/Tetrarch_Manual.zip"><b>Tetrarch_Manual.zip</b></a> y extraelo (clic derecho → Extraer todo).</li>
-<li>En MetaTrader 5: <b>Archivo</b> → <b>Abrir carpeta de datos</b> → <b>MQL5</b> → <b>Experts</b>, y copiá ahí <code>Tetrarch.ex5</code>.</li>
-<li>Cerrá y volvé a abrir MetaTrader 5, y seguí desde el <b>paso 4</b>. En el paso 5, pegá tu clave <code>TET-…</code> en la pestaña <b>Parámetros</b> al cargar el bot.</li></ol></div>
+<li>Con otro antivirus (Avast, AVG, Norton…), buscá "Cuarentena" y restauralo.</li></ol>
+
+<p><b>c) No pasa nada al hacer doble clic</b></p>
+<ol><li>Clic derecho sobre el instalador → <b>Propiedades</b> → abajo marcá <b>Desbloquear</b> → Aceptar, y volvé a abrirlo.</li></ol>
+
+<p id="manual"><b>d) "El Control inteligente de aplicaciones bloqueó una aplicación que podría no ser segura"</b> (Windows 11)</p>
+<p>Este bloqueo no tiene un botón para continuar. No hace falta desactivarlo: usá la <b>instalación manual</b>, que no ejecuta ningún programa. También sirve si cualquiera de los casos anteriores no se resuelve.</p>
+<ol><li>Abrí MetaTrader 5 → menú <b>Archivo</b> → <b>Abrir carpeta de datos</b>.</li>
+<li>Entrá en <b>MQL5</b> → <b>Experts</b>.</li>
+<li>Copiá ahí el archivo <code>Tetrarch.ex5</code> de la carpeta <code>Instalacion_manual</code> del zip.</li>
+<li>Cerrá y volvé a abrir MetaTrader 5.</li>
+<li>Saltá el paso 3 y seguí desde el <b>paso 4</b>. En el paso 5, al cargar el bot, pegá tu clave <code>TET-…</code> en la pestaña <b>Parámetros</b> (queda guardada para la próxima vez).</li></ol></div>
 
 <div class="step"><h2><span class="n">3</span>Cerrá MetaTrader 5 y ejecutá el instalador</h2>
 <ol><li>Cerrá MetaTrader 5 por completo.</li>
