@@ -1,7 +1,7 @@
 {
   "account": "12278068",
   "schemaVersion": 1,
-  "syncedAt": "2026-11-23T14:34:52.821967+00:00",
+  "syncedAt": "2026-11-24T02:53:36.542820+00:00",
   "trades": [
     {
       "action": "Deposit",
@@ -462,6 +462,16 @@
       "profit": 25.24,
       "swap": 0.0,
       "symbol": "USDJPY"
+    },
+    {
+      "action": "Buy",
+      "closeTime": "11/23/2026 10:10",
+      "commission": -0.56,
+      "openTime": "11/23/2026 09:03",
+      "pips": -2656.0,
+      "profit": -213.04,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
     }
   ]
 }
