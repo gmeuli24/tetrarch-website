@@ -1,7 +1,7 @@
 {
   "account": "12278068",
   "schemaVersion": 1,
-  "syncedAt": "2026-11-25T00:42:03.859383+00:00",
+  "syncedAt": "2026-11-25T14:18:37.123035+00:00",
   "trades": [
     {
       "action": "Deposit",
@@ -520,6 +520,16 @@
       "openTime": "11/24/2026 07:18",
       "pips": 9.4,
       "profit": 13.0,
+      "swap": 0.0,
+      "symbol": "USDJPY"
+    },
+    {
+      "action": "Buy",
+      "closeTime": "11/25/2026 09:29",
+      "commission": -2.1,
+      "openTime": "11/25/2026 07:00",
+      "pips": -29.6,
+      "profit": -57.92,
       "swap": 0.0,
       "symbol": "USDJPY"
     }
