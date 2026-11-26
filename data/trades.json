@@ -1,7 +1,7 @@
 {
   "account": "12278068",
   "schemaVersion": 1,
-  "syncedAt": "2026-11-26T00:18:43.902359+00:00",
+  "syncedAt": "2026-11-26T13:52:03.991366+00:00",
   "trades": [
     {
       "action": "Deposit",
@@ -532,6 +532,46 @@
       "profit": -57.92,
       "swap": 0.0,
       "symbol": "USDJPY"
+    },
+    {
+      "action": "Sell",
+      "closeTime": "11/25/2026 19:07",
+      "commission": -0.14,
+      "openTime": "11/25/2026 13:58",
+      "pips": 1519.0,
+      "profit": 30.24,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Sell",
+      "closeTime": "11/25/2026 20:00",
+      "commission": -0.56,
+      "openTime": "11/25/2026 07:41",
+      "pips": 1788.0,
+      "profit": 142.48,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
+    },
+    {
+      "action": "Sell",
+      "closeTime": "11/25/2026 20:00",
+      "commission": 0.0,
+      "openTime": "11/25/2026 09:36",
+      "pips": -69456.0,
+      "profit": -27.78,
+      "swap": 0.0,
+      "symbol": "BTCUSD"
+    },
+    {
+      "action": "Sell",
+      "closeTime": "11/25/2026 22:16",
+      "commission": -0.14,
+      "openTime": "11/25/2026 19:54",
+      "pips": -5580.0,
+      "profit": -111.74,
+      "swap": 0.0,
+      "symbol": "XAUUSD"
     }
   ]
 }
