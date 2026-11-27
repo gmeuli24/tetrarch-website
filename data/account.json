@@ -4,15 +4,15 @@
   "stats": {
     "absGain": 10.48,
     "accountId": 36462247,
-    "balance": 11047.87,
+    "balance": 11046.33,
     "currency": "USC",
     "daily": 0.3,
     "demo": false,
     "drawdown": 6.61,
-    "equity": 11047.87,
+    "equity": 11328.66,
     "firstTradeDate": "10/25/2026 00:00",
     "gain": 10.49,
-    "lastUpdateDate": "11/26/2026 22:42",
+    "lastUpdateDate": "11/27/2026 10:09",
     "monthly": 9.54,
     "name": "Tetrarch",
     "pips": -82673.7,
@@ -20,5 +20,5 @@
     "profitFactor": 1.31,
     "server": "Vantage Markets"
   },
-  "syncedAt": "2026-11-27T00:34:01.426268+00:00"
+  "syncedAt": "2026-11-27T13:49:56.210308+00:00"
 }
